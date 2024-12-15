@@ -33,7 +33,7 @@ return {
                       initial_mode = "normal",
                     }
                   else
-                    print "No changes in git status"
+                    vim.notify("No changes in git status", vim.log.levels.INFO)
                   end
                 end,
               },
