@@ -43,6 +43,7 @@ return {
                   follow = true,
                   no_ignore = true,
                   file_ignore_patterns = { "node_modules" },
+                  find_command = { "rg", "--files", "--hidden", "--glob", ".*" },
                 }
               end,
             },
