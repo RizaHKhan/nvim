@@ -39,6 +39,7 @@ return {
               },
               ["<leader>f."] = function()
                 require("telescope.builtin").find_files {
+                  initial_mode = "normal",
                   hidden = true,
                   follow = true,
                   no_ignore = true,
