@@ -43,22 +43,11 @@ return {
     mappings = {
       -- first key is the mode
       n = {
-
         -- navigate buffer tabs
         ["tt"] = { cmd = ":tabnew <cr>", desc = "New tab" },
         ["tc"] = { cmd = ":tabclose <cr>", desc = "Close tab" },
-
         -- Oil
         ["="] = { cmd = ":Oil<cr>", desc = "Oil file explorer" },
-        -- mappings seen under group name "Buffer"
-        ["<Leader>bd"] = {
-          function()
-            require("astroui.status.heirline").buffer_picker(
-              function(bufnr) require("astrocore.buffer").close(bufnr) end
-            )
-          end,
-          desc = "Close buffer from tabline",
-        },
         -- Diffview
         ["<leader>do"] = { cmd = ":DiffviewOpen<cr>", desc = "Diffview Open" },
         ["<leader>df"] = { cmd = ":DiffviewFileHistory %<cr>", desc = "Diffview File History" },
