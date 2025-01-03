@@ -2,21 +2,31 @@ return {
   "mistweaverco/kulala.nvim",
   ft = "http",
   dependencies = {
-    { -- AstroCore is always loaded on startup, so making it a dependency doesn't matter
+    {
       "AstroNvim/astrocore",
+      ---@type AstroCoreOpts
       opts = {
-        mappings = { -- define a mapping to load the plugin module
-          n = {
-            ["<leader>r"] = "<cmd>lua require('kulala').run()<cr>",
-            ["[r"] = "<cmd>lua require('kulala').jump_prev()<cr>",
-            ["]r"] = "<cmd>lua require('kulala').jump_next()<cr>",
-            ["<leader>i"] = "<cmd>lua require('kulala').inspect()<cr>",
+        autocmds = {
+          keymaps = {
+            {
+              event = { "BufRead", "BufNewFile" },
+              pattern = "*.http",
+              desc = "kulala.nvim http file keymaps",
+              callback = function()
+                local opts = { noremap = true, silent = true }
+                vim.api.nvim_buf_set_keymap(0, "n", "<leader>r", "<cmd>lua require('kulala').run()<cr>", opts)
+                vim.api.nvim_buf_set_keymap(0, "n", "N", "<cmd>lua require('kulala').jump_prev()<cr>", opts)
+                vim.api.nvim_buf_set_keymap(0, "n", "n", "<cmd>lua require('kulala').jump_next()<cr>", opts)
+                vim.api.nvim_buf_set_keymap(0, "n", "<leader>i", "<cmd>lua require('kulala').inspect()<cr>", opts)
+                vim.api.nvim_buf_set_keymap(0, "n", "<leader>p", "<cmd>lua require('kulala').toggle_view()<cr>", opts)
+              end,
+            },
           },
         },
       },
     },
   },
   opts = {
-    debug = true
+    debug = true,
   },
 }
