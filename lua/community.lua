@@ -5,11 +5,12 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.colorscheme.nordic-nvim" },
+  { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.docker.lazydocker" },
   { import = "astrocommunity.editing-support.copilotchat-nvim" },
   { import = "astrocommunity.editing-support.neogen" },
+  { import = "astrocommunity.file-explorer.mini-files" },
   { import = "astrocommunity.git.diffview-nvim" },
   { import = "astrocommunity.git.octo-nvim" },
   { import = "astrocommunity.motion.flit-nvim" },
