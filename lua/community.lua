@@ -10,7 +10,6 @@ return {
   { import = "astrocommunity.docker.lazydocker" },
   { import = "astrocommunity.editing-support.copilotchat-nvim" },
   { import = "astrocommunity.editing-support.neogen" },
-  { import = "astrocommunity.file-explorer.mini-files" },
   { import = "astrocommunity.git.diffview-nvim" },
   { import = "astrocommunity.git.octo-nvim" },
   { import = "astrocommunity.motion.flit-nvim" },
