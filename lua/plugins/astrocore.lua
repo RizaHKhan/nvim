@@ -46,8 +46,6 @@ return {
         -- navigate buffer tabs
         ["tt"] = { cmd = ":tabnew <cr>", desc = "New tab" },
         ["tc"] = { cmd = ":tabclose <cr>", desc = "Close tab" },
-        -- Oil
-        ["="] = { cmd = ":Oil<cr>", desc = "Oil file explorer" },
         -- Diffview
         ["<leader>do"] = { cmd = ":DiffviewOpen<cr>", desc = "Diffview Open" },
         ["<leader>df"] = { cmd = ":DiffviewFileHistory %<cr>", desc = "Diffview File History" },
