@@ -4,8 +4,6 @@ return {
   priority = 1000,
   opts = {
     style = "moon",
-    on_colors = function(colors)
-      colors.border = "#a9b1d6"
-    end,
+    on_colors = function(colors) colors.border = "#4b5563" end,
   },
 }
