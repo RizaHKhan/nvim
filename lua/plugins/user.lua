@@ -86,4 +86,10 @@ return {
       enabled = false,
     },
   },
+  {
+    "yetone/avante.nvim",
+    opts = {
+      provider = "copilot",
+    },
+  },
 }

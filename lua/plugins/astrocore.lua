@@ -50,8 +50,6 @@ return {
         ["<leader>do"] = { cmd = ":DiffviewOpen<cr>", desc = "Diffview Open" },
         ["<leader>df"] = { cmd = ":DiffviewFileHistory %<cr>", desc = "Diffview File History" },
         ["<leader>dc"] = { cmd = ":DiffviewClose<cr>", desc = "Diffview Close" },
-        -- Copilot
-        ["L"] = { cmd = "<cmd>CopilotChatToggle<cr>", desc = "Copilot Chat Toggle" },
       },
     },
   },
