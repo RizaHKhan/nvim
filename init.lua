@@ -15,5 +15,11 @@ if not pcall(require, "lazy") then
   vim.cmd.quit()
 end
 
+vim.filetype.add({
+  extension = {
+    ['http'] = 'http',
+  },
+})
+
 require "lazy_setup"
 require "polish"
