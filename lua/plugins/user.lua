@@ -95,7 +95,7 @@ return {
     },
     opts = {
       adapters = {
-        openai = function()
+        deepseek = function()
           return require("codecompanion.adapters").extend("ollama", {
             schema = {
               model = {
@@ -107,10 +107,10 @@ return {
       },
       strategies = {
         chat = {
-          adapter = "ollama",
+          adapter = "deepseek",
         },
         inline = {
-          adapter = "ollama",
+          adapter = "deepseek",
         },
       },
       opts = {
