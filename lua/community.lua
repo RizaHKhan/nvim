@@ -5,7 +5,6 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity.completion.avante-nvim" },
   { import = "astrocommunity.completion.blink-cmp" },
   { import = "astrocommunity.docker.lazydocker" },
   { import = "astrocommunity.editing-support.neogen" },

@@ -87,9 +87,35 @@ return {
     },
   },
   {
-    "yetone/avante.nvim",
+    "olimorris/codecompanion.nvim",
+    config = true,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
     opts = {
-      provider = "copilot",
+      adapters = {
+        openai = function()
+          return require("codecompanion.adapters").extend("ollama", {
+            schema = {
+              model = {
+                default = "deepseek-coder:33b",
+              },
+            },
+          })
+        end,
+      },
+      strategies = {
+        chat = {
+          adapter = "ollama",
+        },
+        inline = {
+          adapter = "ollama",
+        },
+      },
+      opts = {
+        log_level = "DEBUG",
+      },
     },
   },
 }
