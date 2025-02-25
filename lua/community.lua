@@ -15,7 +15,6 @@ return {
   { import = "astrocommunity.motion.mini-move" },
   { import = "astrocommunity.motion.mini-surround" },
   { import = "astrocommunity.pack.docker" },
-  { import = "astrocommunity.pack.full-dadbod" },
   { import = "astrocommunity.pack.laravel" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.php" },
