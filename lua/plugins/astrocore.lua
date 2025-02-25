@@ -50,7 +50,17 @@ return {
         ["<leader>do"] = { cmd = ":DiffviewOpen<cr>", desc = "Diffview Open" },
         ["<leader>df"] = { cmd = ":DiffviewFileHistory %<cr>", desc = "Diffview File History" },
         ["<leader>dc"] = { cmd = ":DiffviewClose<cr>", desc = "Diffview Close" },
+        ["L"] = { cmd = ":CodeCompanionChat Toggle<cr>", desc = "CodeCompanionChat Toggle" },
+
+        -- vim.keymap.set({ "n", "v" }, "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
+        -- vim.keymap.set({ "n", "v" }, "<LocalLeader>a", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
+        -- vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
       },
+      v = {
+        ["E"] = { cmd = ":'<,'>CodeCompanion /explain<cr>", desc = "Explain Code" },
+        ["F"] = { cmd = ":'<,'>CodeCompanion /fix<cr>", desc = "Fix Code" },
+        ["T"] = { cmd = ":'<,'>CodeCompanion /tests<cr>", desc = "Create Tests" },
+      }
     },
   },
 }
