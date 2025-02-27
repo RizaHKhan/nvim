@@ -94,17 +94,6 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
     opts = {
-      adapters = {
-        deepseek = function()
-          return require("codecompanion.adapters").extend("ollama", {
-            schema = {
-              model = {
-                default = "deepseek-coder:33b",
-              },
-            },
-          })
-        end,
-      },
       strategies = {
         chat = {
           adapter = "copilot",
