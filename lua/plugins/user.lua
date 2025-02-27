@@ -107,10 +107,10 @@ return {
       },
       strategies = {
         chat = {
-          adapter = "deepseek",
+          adapter = "copilot",
         },
         inline = {
-          adapter = "deepseek",
+          adapter = "copilot",
         },
       },
       opts = {

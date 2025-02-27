@@ -6,6 +6,7 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.completion.blink-cmp" },
+  { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.docker.lazydocker" },
   { import = "astrocommunity.editing-support.neogen" },
   { import = "astrocommunity.git.diffview-nvim" },
