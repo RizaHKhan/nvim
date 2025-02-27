@@ -47,6 +47,7 @@ return {
         ["tt"] = { cmd = ":tabnew <cr>", desc = "New tab" },
         ["tc"] = { cmd = ":tabclose <cr>", desc = "Close tab" },
         -- Diffview
+        ["<leader>D"] = { cmd = ":Dbee<cr>", desc = "Toggle Dbee" },
         ["<leader>do"] = { cmd = ":DiffviewOpen<cr>", desc = "Diffview Open" },
         ["<leader>df"] = { cmd = ":DiffviewFileHistory %<cr>", desc = "Diffview File History" },
         ["<leader>dc"] = { cmd = ":DiffviewClose<cr>", desc = "Diffview Close" },
