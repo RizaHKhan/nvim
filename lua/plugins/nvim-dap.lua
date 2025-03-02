@@ -16,8 +16,6 @@ return {
         name = "Listen for xdebug",
         port = "9003",
         log = true,
-        --  serverSourceRoot = 'localhost:8888',
-        --  localSourceRoot = '~/Sites/',
       },
     }
   end,
