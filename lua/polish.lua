@@ -7,10 +7,4 @@ vim.filetype.add {
   extension = {
     ["http"] = "http",
   },
-  -- filename = {
-  --   ["Foofile"] = "fooscript",
-  -- },
-  -- pattern = {
-  --   ["~/%.config/foo/.*"] = "fooscript",
-  -- },
 }
