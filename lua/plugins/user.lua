@@ -122,8 +122,4 @@ return {
       require("dbee").setup(--[[optional config]])
     end,
   },
-  {
-    "luisiacc/gruvbox-baby",
-    branch = "main",
-  },
 }
