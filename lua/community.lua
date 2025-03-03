@@ -11,7 +11,6 @@ return {
   { import = "astrocommunity.editing-support.neogen" },
   { import = "astrocommunity.git.diffview-nvim" },
   { import = "astrocommunity.git.octo-nvim" },
-  { import = "astrocommunity.git.neogit" },
   { import = "astrocommunity.motion.flit-nvim" },
   { import = "astrocommunity.motion.leap-nvim" },
   { import = "astrocommunity.motion.mini-move" },
