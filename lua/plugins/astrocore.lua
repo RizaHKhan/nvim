@@ -52,6 +52,9 @@ return {
         -- ["<leader>df"] = { cmd = ":DiffviewFileHistory %<cr>", desc = "Diffview File History" },
         -- ["<leader>dc"] = { cmd = ":DiffviewClose<cr>", desc = "Diffview Close" },
         ["L"] = { cmd = ":CodeCompanionChat Toggle<cr>", desc = "CodeCompanionChat Toggle" },
+        [";"] = { cmd = ":DiffviewOpen<cr>", desc = "Open Diffview" },
+        [";;"] = { cmd = ":DiffviewClose<cr>", desc = "Close Diffview" },
+        [";h"] = { cmd = "<cmd>DiffviewFileHistory --follow %<cr>", desc = "Close Diffview" },
       },
       v = {
         ["A"] = { cmd = ":CodeCompanionActions<cr>", desc = "Code Companion Actions" },
