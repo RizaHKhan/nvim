@@ -122,4 +122,7 @@ return {
       require("dbee").setup(--[[optional config]])
     end,
   },
+  {
+    "sainnhe/gruvbox-material",
+  },
 }
