@@ -8,7 +8,7 @@ return {
   config = function()
     require("neotest").setup {
       adapters = {
-        require("neotest-vitest"),
+        require "neotest-vitest",
         require "neotest-phpunit",
         require "neotest-jest" {
           jestCommand = "npm test --",
