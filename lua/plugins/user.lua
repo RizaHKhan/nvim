@@ -135,4 +135,7 @@ return {
       vim.g.gruvbox_material_float_style = "dim"
     end,
   },
+  {
+    "gioele/vim-autoswap",
+  },
 }
