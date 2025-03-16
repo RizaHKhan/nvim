@@ -23,11 +23,21 @@ return {
         {
           type = "php",
           request = "launch",
-          name = "Listen for xdebug",
+          name = "Listen for xdebug (Docker)",
           port = "9003",
           log = true,
           pathMappings = {
-            ["/app"] = "${workspaceFolder}", -- Use os.getenv to resolve the home directory
+            ["/app"] = "${workspaceFolder}",
+          },
+        },
+        {
+          type = "php",
+          request = "launch",
+          name = "Listen for Xdebug (Local)",
+          port = 9003,
+          log = true,
+          pathMappings = {
+            ["."] = "${workspaceFolder}",
           },
         },
       }
