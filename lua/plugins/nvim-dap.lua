@@ -13,7 +13,7 @@ return {
       {
         type = "php",
         request = "launch",
-        name = "Listen for xdebug",
+        name = "Docker XDebug",
         port = "9003",
         log = true,
         pathMappings = {
