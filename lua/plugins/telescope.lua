@@ -37,7 +37,7 @@ return {
                   end
                 end,
               },
-              ["<leader>f."] = function()
+              [".."] = function()
                 require("telescope.builtin").find_files {
                   initial_mode = "normal",
                   hidden = true,
