@@ -84,7 +84,7 @@ return {
             type = "pwa-msedge",
             request = "launch",
             name = "Launch Edge (nvim-dap)",
-            url = "http://localhost:5173",
+            url = enter_launch_url,
             webRoot = "${workspaceFolder}",
             runtimeExecutable = "/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
             runtimeArgs = { "--remote-debugging-port=9222", "--user-data-dir=remote-debug-profile" },
@@ -92,7 +92,6 @@ return {
           },
         }
       end
-
     end,
     dependencies = {
       -- Install the vscode-js-debug adapter
