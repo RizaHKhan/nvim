@@ -1,5 +1,4 @@
 return {
-  { "nvim-neotest/nvim-nio" },
   {
     "mfussenegger/nvim-dap",
     config = function()
@@ -8,7 +7,7 @@ return {
       dap.adapters.php = {
         type = "executable",
         command = "node",
-        args = { os.getenv "HOME" .. "/.local/share/nvim/lazy/vscode-php-debug/out/phpDebug.js" },
+        args = { vim.fn.stdpath "data" .. "/lazy/vscode-php-debug/out/phpDebug.js" },
       }
 
       dap.configurations.php = {
@@ -44,7 +43,7 @@ return {
           executable = {
             command = "node",
             args = {
-              os.getenv "HOME" .. "/.local/share/nvim/lazy/vscode-js-debug/out/src/vsDebugServer.js",
+              vim.fn.stdpath "data" .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js",
               "${port}",
             },
           },
@@ -87,13 +86,15 @@ return {
             url = enter_launch_url,
             webRoot = "${workspaceFolder}",
             runtimeExecutable = "/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
-            runtimeArgs = { "--remote-debugging-port=9222", "--user-data-dir=remote-debug-profile" },
+            -- runtimeArgs = { "--remote-debugging-port=9222", "--user-data-dir=remote-debug-profile" },
             sourceMaps = true,
           },
         }
       end
     end,
     dependencies = {
+      "rcarriga/nvim-dap-ui",
+      "nvim-neotest/nvim-nio",
       -- Install the vscode-js-debug adapter
       {
         "microsoft/vscode-js-debug",
