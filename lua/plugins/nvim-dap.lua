@@ -16,7 +16,7 @@ return {
           type = "php",
           request = "launch",
           name = "Listen for xdebug (Docker)",
-          port = "9003",
+          port = 9003,
           log = true,
           pathMappings = {
             ["/app"] = "${workspaceFolder}",
@@ -87,29 +87,12 @@ return {
             url = "http://localhost:5173",
             webRoot = "${workspaceFolder}",
             runtimeExecutable = "/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
-            runtimeArgs = { "--remote-debugging-port=5173", "--user-data-dir=remote-debug-profile" },
+            runtimeArgs = { "--remote-debugging-port=9222", "--user-data-dir=remote-debug-profile" },
             sourceMaps = true,
           },
         }
       end
 
-      local convertArgStringToArray = function(config)
-        local c = {}
-
-        for k, v in pairs(vim.deepcopy(config)) do
-          if k == "args" and type(v) == "string" then
-            c[k] = require("dap.utils").splitstr(v)
-          else
-            c[k] = v
-          end
-        end
-
-        return c
-      end
-
-      for key, _ in pairs(dap.configurations) do
-        dap.listeners.on_config[key] = convertArgStringToArray
-      end
     end,
     dependencies = {
       -- Install the vscode-js-debug adapter
