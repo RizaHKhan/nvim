@@ -81,9 +81,9 @@ return {
       for _, language in ipairs { "typescript", "javascript", "typescriptreact", "javascriptreact", "vue" } do
         dap.configurations[language] = {
           {
-            type = "pwa-msedge",
-            request = "launch",
             name = "Launch Edge (nvim-dap)",
+            request = "launch",
+            type = "msedge",
             url = enter_launch_url,
             webRoot = "${workspaceFolder}",
             runtimeExecutable = "/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
