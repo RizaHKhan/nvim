@@ -1,40 +1,72 @@
--- You can also add or configure plugins by creating files in this `plugins/` folder
--- Here are some examples:
-
 ---@type LazySpec
 return {
-
-  -- == Examples of Adding Plugins ==
-
   "andweeb/presence.nvim",
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
     config = function() require("lsp_signature").setup() end,
   },
-
-  -- == Examples of Overriding Plugins ==
-
-  -- customize alpha options
+  -- customize dashboard options
   {
-    "goolord/alpha-nvim",
-    opts = function(_, opts)
-      -- customize the dashboard header
-      opts.section.header.val = {
-        " █████  ███████ ████████ ██████   ██████",
-        "██   ██ ██         ██    ██   ██ ██    ██",
-        "███████ ███████    ██    ██████  ██    ██",
-        "██   ██      ██    ██    ██   ██ ██    ██",
-        "██   ██ ███████    ██    ██   ██  ██████",
-        " ",
-        "    ███    ██ ██    ██ ██ ███    ███",
-        "    ████   ██ ██    ██ ██ ████  ████",
-        "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-        "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-        "    ██   ████   ████   ██ ██      ██",
-      }
-      return opts
-    end,
+    "folke/snacks.nvim",
+    opts = {
+      bigfile = { enabled = true },
+      explorer = { enabled = false },
+      indent = { enabled = false },
+      input = { enabled = true },
+      notifier = {
+        enabled = true,
+        timeout = 3000,
+      },
+      picker = { enabled = true },
+      quickfile = { enabled = true },
+      scope = { enabled = true },
+      scroll = { enabled = false },
+      statuscolumn = { enabled = true },
+      words = { enabled = true },
+      styles = {
+        notification = {
+          -- wo = { wrap = true } -- Wrap notifications
+        },
+      },
+      dashboard = {
+        preset = {
+          header = table.concat({
+            " █████  ███████ ████████ ██████   ██████ ",
+            "██   ██ ██         ██    ██   ██ ██    ██",
+            "███████ ███████    ██    ██████  ██    ██",
+            "██   ██      ██    ██    ██   ██ ██    ██",
+            "██   ██ ███████    ██    ██   ██  ██████ ",
+            "",
+            "███    ██ ██    ██ ██ ███    ███",
+            "████   ██ ██    ██ ██ ████  ████",
+            "██ ██  ██ ██    ██ ██ ██ ████ ██",
+            "██  ██ ██  ██  ██  ██ ██  ██  ██",
+            "██   ████   ████   ██ ██      ██",
+          }, "\n"),
+        },
+      },
+    },
+    keys = {
+      { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
+      { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
+      { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
+      { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
+      { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
+      { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },
+      { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
+      { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
+      { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
+      { "<leader>.", function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
+      { "<leader>S", function() Snacks.scratch.select() end, desc = "Select Scratch Buffer" },
+      { "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notification History" },
+      { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
+      { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
+      { "<c-/>", function() Snacks.terminal() end, desc = "Toggle Terminal" },
+      { "<c-_>", function() Snacks.terminal() end, desc = "which_key_ignore" },
+      { "]]", function() Snacks.words.jump(vim.v.count1) end, desc = "Next Reference", mode = { "n", "t" } },
+      { "[[", function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference", mode = { "n", "t" } },
+    },
   },
 
   -- You can disable default plugins as follows:
@@ -79,16 +111,6 @@ return {
         Rule("a", "a", "-vim")
       )
     end,
-  },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    opts = {
-      enabled = false,
-    },
-  },
-  {
-    "kevinhwang91/nvim-ufo",
-    enabled = false,
   },
   {
     "olimorris/codecompanion.nvim",
@@ -141,11 +163,6 @@ return {
   },
   {
     "gioele/vim-autoswap",
-  },
-  {
-    "echasnovski/mini.surround",
-    version = false,
-    config = function() require("mini.surround").setup() end,
   },
   {
     "okuuva/auto-save.nvim",
