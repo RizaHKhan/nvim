@@ -8,10 +8,6 @@ return {
       version = "1.*",
     },
     {
-      "microsoft/debugpy",
-      run = "pip install debugpy",
-    },
-    {
       "xdebug/vscode-php-debug",
       build = "npm install --legacy-peer-deps --no-save && npm run build",
     },
