@@ -29,6 +29,7 @@ return {
   { import = "astrocommunity.pack.vue" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.quickfix.nvim-bqf" },
+  { import = "astrocommunity.recipes.ai" },
   { import = "astrocommunity.recipes.auto-session-restore" },
   { import = "astrocommunity.recipes.disable-tabline" },
   { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
