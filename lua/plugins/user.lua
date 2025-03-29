@@ -87,6 +87,10 @@ return {
     },
   },
   {
+    "kevinhwang91/nvim-ufo",
+    enabled = false,
+  },
+  {
     "olimorris/codecompanion.nvim",
     config = true,
     dependencies = {
