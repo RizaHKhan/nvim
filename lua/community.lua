@@ -32,7 +32,6 @@ return {
   { import = "astrocommunity.recipes.ai" },
   { import = "astrocommunity.recipes.auto-session-restore" },
   { import = "astrocommunity.recipes.disable-tabline" },
-  { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
   { import = "astrocommunity.search.grug-far-nvim" },
   { import = "astrocommunity.test.neotest" },
   { import = "astrocommunity.utility.lua-json5" },
