@@ -50,6 +50,19 @@ return {
         name = "Launch file",
         program = "${file}", -- This configuration will launch the current file if used.
       },
+      {
+        name = "Pytest: Current File",
+        type = "python",
+        request = "launch",
+        module = "pytest",
+        args = {
+          "${file}",
+          "-sv",
+          "--log-cli-level=INFO",
+          "--log-file=test_out.log",
+        },
+        console = "integratedTerminal",
+      },
     }
 
     dap.adapters.php = {
