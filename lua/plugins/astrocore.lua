@@ -55,6 +55,7 @@ return {
         [";"] = { cmd = ":DiffviewOpen<cr>", desc = "Open Diffview" },
         [";;"] = { cmd = ":DiffviewClose<cr>", desc = "Close Diffview" },
         [";h"] = { cmd = "<cmd>DiffviewFileHistory --follow %<cr>", desc = "Close Diffview" },
+        ["="] = { cmd = "<cmd>Oil<cr>", desc = "Oil" },
       },
       v = {
         ["A"] = { cmd = ":CodeCompanionActions<cr>", desc = "Code Companion Actions" },
