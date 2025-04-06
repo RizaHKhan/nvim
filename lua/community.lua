@@ -35,6 +35,8 @@ return {
   { import = "astrocommunity.recipes.disable-tabline" },
   { import = "astrocommunity.search.grug-far-nvim" },
   { import = "astrocommunity.test.neotest" },
+  { import = "astrocommunity.utility.hover-nvim" },
   { import = "astrocommunity.utility.lua-json5" },
   { import = "astrocommunity.utility.noice-nvim" },
+  { import = "astrocommunity.workflow.precognition-nvim" },
 }
