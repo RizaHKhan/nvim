@@ -85,6 +85,16 @@ return {
       {
         type = "php",
         request = "launch",
+        name = "Listen for Xdebug on Sail",
+        port = 9003,
+        pathMappings = {
+          ["/var/www/html"] = "${workspaceFolder}",
+        },
+        hostname = "localhost",
+      },
+      {
+        type = "php",
+        request = "launch",
         name = "Listen for Xdebug (Local)",
         port = 9003,
         log = true,
