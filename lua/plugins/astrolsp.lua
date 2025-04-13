@@ -40,6 +40,7 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
+      "phpstan",
       -- "pyright"
     },
     -- customize language server configuration options passed to `lspconfig`
@@ -52,6 +53,7 @@ return {
           ["language_server.diagnostics_on_open"] = false,
           ["language_server.diagnostics_on_save"] = false,
           ["language_server_phpstan.enabled"] = true,
+          ["language_server_php_cs_fixer.enabled"] = true,
           ["language_server_psalm.enabled"] = false,
           ["language_server_completion.trim_leading_dollar"] = true,
           ["language_server_php_cs_fixer.enabled true"] = true,
