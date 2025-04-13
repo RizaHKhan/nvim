@@ -56,6 +56,7 @@ return {
         [";;"] = { cmd = ":DiffviewClose<cr>", desc = "Close Diffview" },
         [";h"] = { cmd = "<cmd>DiffviewFileHistory --follow %<cr>", desc = "Close Diffview" },
         ["="] = { cmd = "<cmd>Oil<cr>", desc = "Oil" },
+        ["<leader>k"] = { cmd = require("hover").hover, desc = "hover.nvim" },
       },
       v = {
         ["A"] = { cmd = ":CodeCompanionActions<cr>", desc = "Code Companion Actions" },
