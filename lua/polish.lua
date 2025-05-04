@@ -8,3 +8,5 @@ vim.filetype.add {
     ["http"] = "http",
   },
 }
+
+vim.opt.iskeyword:append { "-", "$" }
