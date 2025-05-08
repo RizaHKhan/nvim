@@ -58,6 +58,7 @@ return {
         ["="] = { cmd = "<cmd>Oil<cr>", desc = "Oil" },
         ["<leader>k"] = { cmd = require("hover").hover, desc = "hover.nvim" },
         ["<leader>dw"] = { cmd = ":DapViewWatch<cr>", desc = "Watch" },
+        ["<leader>W"] = { cmd = ":Telescope neorg switch_workspace<cr>" },
       },
       v = {
         ["A"] = { cmd = ":CodeCompanionActions<cr>", desc = "Code Companion Actions" },

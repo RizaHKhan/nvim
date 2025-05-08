@@ -1,6 +1,6 @@
 return {
   "nvim-neorg/neorg",
-  dependencies = { "luarocks.nvim" },
+  dependencies = { "luarocks.nvim", "nvim-lua/plenary.nvim", "nvim-neorg/neorg-telescope" },
   config = function()
     -- Pick one of ...
 
@@ -11,6 +11,15 @@ return {
     require("neorg").setup {
       load = {
         ["core.defaults"] = {},
+        ["core.integrations.telescope"] = {
+          config = {
+            insert_file_link = {
+              -- Whether to show the title preview in telescope. Affects performance with a large
+              -- number of files.
+              show_title_preview = true,
+            },
+          },
+        },
         ["core.dirman"] = { -- Manage your workspaces
           config = {
             workspaces = {
