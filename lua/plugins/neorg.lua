@@ -11,6 +11,15 @@ return {
     require("neorg").setup {
       load = {
         ["core.defaults"] = {},
+        ["core.dirman"] = { -- Manage your workspaces
+          config = {
+            workspaces = {
+              networking = "~/networking", -- Define the "networking" workspace
+              notes = "~/notes", -- Example of another workspace
+            },
+            default_workspace = "networking", -- Optional: Set a default workspace
+          },
+        },
       },
     }
   end,
