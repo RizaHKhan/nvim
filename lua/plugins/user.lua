@@ -174,4 +174,7 @@ return {
       -- or just leave it empty :)
     },
   },
+  {
+    "vhyrro/luarocks.nvim",
+  },
 }
