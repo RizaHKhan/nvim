@@ -10,3 +10,4 @@ vim.filetype.add {
 }
 
 vim.opt.iskeyword:append { "-", "$" }
+vim.opt.conceallevel = 2
