@@ -11,7 +11,9 @@ return {
     "folke/snacks.nvim",
     opts = {
       bigfile = { enabled = true },
-      explorer = { enabled = true },
+      explorer = {
+        replace_netrw = true,
+      },
       indent = { enabled = false },
       input = { enabled = true },
       notifier = {
