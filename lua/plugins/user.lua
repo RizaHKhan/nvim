@@ -180,11 +180,11 @@ return {
       {
         "K",
         function()
-          Snacks.picker.git_diff {
+          Snacks.picker.git_status {
             on_show = function() vim.cmd.stopinsert() end,
           }
         end,
-        desc = "Find Git Diff Files",
+        desc = "Git Status Files",
       },
       { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
       { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
