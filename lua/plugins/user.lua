@@ -11,9 +11,7 @@ return {
     "folke/snacks.nvim",
     opts = {
       bigfile = { enabled = true },
-      explorer = {
-        replace_netrw = true,
-      },
+      explorer = { enabled = false },
       indent = { enabled = false },
       input = { enabled = true },
       notifier = {
@@ -150,7 +148,6 @@ return {
         end,
         desc = "Smart Find Files",
       },
-      { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
       {
         "H",
         function()
@@ -220,8 +217,6 @@ return {
       },
     },
   },
-
-  { "nvim-neo-tree/neo-tree.nvim", enabled = false },
 
   -- You can disable default plugins as follows:
   { "max397574/better-escape.nvim", enabled = false },
