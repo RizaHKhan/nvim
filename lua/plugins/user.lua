@@ -326,4 +326,7 @@ return {
   {
     "vhyrro/luarocks.nvim",
   },
+  {
+    "vimpostor/vim-tpipeline",
+  },
 }
