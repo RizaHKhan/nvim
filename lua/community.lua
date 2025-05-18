@@ -44,4 +44,5 @@ return {
   { import = "astrocommunity.utility.hover-nvim" },
   { import = "astrocommunity.utility.lua-json5" },
   { import = "astrocommunity.utility.noice-nvim" },
+  { import = "astrocommunity.utility.neodim" },
 }
