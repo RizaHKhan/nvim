@@ -4,12 +4,14 @@
 --       as this provides autocomplete and documentation while editing
 
 ---@type LazySpec
+vim.g.everforest_colors_override = { bg_dim = { "#2d353b", "233" } }
+
 return {
   "AstroNvim/astroui",
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
-    colorscheme = "melange",
+    colorscheme = "everforest",
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
       init = { -- this table overrides highlights in all themes

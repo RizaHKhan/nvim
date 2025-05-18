@@ -7,7 +7,7 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.completion.blink-cmp" },
   { import = "astrocommunity.completion.copilot-lua-cmp" },
-  { import = "astrocommunity.colorscheme.melange-nvim" },
+  { import = "astrocommunity.colorscheme.everforest" },
   { import = "astrocommunity.debugging.nvim-dap-repl-highlights" },
   { import = "astrocommunity.debugging.nvim-dap-view" },
   { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
