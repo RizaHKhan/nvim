@@ -5,6 +5,7 @@
 
 ---@type LazySpec
 vim.g.everforest_colors_override = { bg_dim = { "#2d353b", "233" } }
+vim.g.everforest_background = "hard"
 
 return {
   "AstroNvim/astroui",
