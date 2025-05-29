@@ -33,7 +33,6 @@ return {
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.vue" },
   { import = "astrocommunity.pack.yaml" },
-  { import = "astrocommunity.programming-language-support.kulala-nvim" },
   { import = "astrocommunity.quickfix.nvim-bqf" },
   { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
   { import = "astrocommunity.recipes.auto-session-restore" },
