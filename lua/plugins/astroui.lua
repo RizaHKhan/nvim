@@ -4,8 +4,6 @@
 --       as this provides autocomplete and documentation while editing
 
 ---@type LazySpec
-vim.g.everforest_colors_override = { bg_dim = { "#2d353b", "233" } }
-vim.g.everforest_background = "hard"
 
 return {
   "AstroNvim/astroui",
@@ -17,6 +15,11 @@ return {
     highlights = {
       init = { -- this table overrides highlights in all themes
         -- Normal = { bg = "#000000" },
+      },
+      everforest = {
+        -- this table overrides highlights in the everforest theme
+        Normal = { bg_dim = { "#2d353b", "233" } },
+        everforest_background = { "hard" }
       },
       astrodark = { -- a table of overrides/changes when applying the astrotheme theme
         -- Normal = { bg = "#000000" },
