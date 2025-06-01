@@ -361,35 +361,5 @@ return {
       debug = true,
     },
   },
-  {
-    "neanias/everforest-nvim",
-    version = false,
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("everforest").setup {
-        background = "medium",
-        disable_italic_comments = false,
-        dim_inactive_windows = false,
-        italics = true,
-        ui_contrast = "low",
-        inlay_hints_background = "none",
-        sign_column_background = "none",
-        diagnostic_line_highlight = false,
-        diagnostic_virtual_text = "grey",
-        spell_foreground = false,
-        show_eob = false,
-        transparent_background_level = 0.8, -- Set transparency level for background
-        float_style = "dim", -- Set float style to dim
-        float_background = "none", -- Disable float background
-        on_highlights = function(hl, c)
-          hl.CursorLine = { bg = "none" } -- Disable cursor line background
-          hl.CursorLineNr = { fg = "#d4be98" } -- Highlight cursor line number
-          hl.NormalFloat = { bg = "none" } -- Disable float background
-        end,
-        diagnostic_text_highlight = true, -- Enable diagnostic text highlighting
-        colours_override = function(palette) palette.red = "#b86466" end,
-      }
-    end,
-  },
+  { "EdenEast/nightfox.nvim" },
 }
