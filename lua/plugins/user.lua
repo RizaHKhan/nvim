@@ -362,10 +362,4 @@ return {
       debug = true,
     },
   },
-  {
-    "phelipetls/jsonpath.nvim",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-    },
-  },
 }
