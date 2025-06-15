@@ -60,11 +60,6 @@ return {
         ["<leader>dw"] = { cmd = ":DapViewWatch<cr>", desc = "Watch" },
         ["<leader>W"] = { cmd = ":Telescope neorg switch_workspace<cr>" },
         ["M"] = { cmd = ":MCPHub<cr>", desc = "MCP Hub" },
-        ["yP"] = {
-          cmd = function() vim.fn.setreg("+", require("jsonpath").get()) end,
-          desc = "Yank JSONPath",
-          buffer = true,
-        },
       },
       v = {
         ["A"] = { cmd = ":CodeCompanionActions<cr>", desc = "Code Companion Actions" },
