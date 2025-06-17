@@ -370,5 +370,16 @@ return {
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {},
+    "phelipetls/jsonpath.nvim",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+  },
+  {
+    "phelipetls/jsonpath.nvim",
+    enabled = true,
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
   },
 }
