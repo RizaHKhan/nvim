@@ -27,6 +27,14 @@ return {
           -- if item.file:match("neobean/lua/config/keymaps%.lua") then
           --   item.score_add = (item.score_add or 0) + 100
           -- end
+          -- Demote test files:
+          if
+            item.file:match "[_/\\]tests?[/\\]"
+            or item.file:match "[._-]test[._%-]"
+            or item.file:match "[._-]spec[._%-]"
+          then
+            item.score_add = (item.score_add or 0) - 50
+          end
           return item
         end,
         -- In case you want to make sure that the score manipulation above works
