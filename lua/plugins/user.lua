@@ -35,6 +35,8 @@ return {
           then
             item.score_add = (item.score_add or 0) - 50
           end
+          -- Add file score if picked
+          if item.picked and item.score then item.score_add = (item.score_add or 0) + 50 end
           return item
         end,
         -- In case you want to make sure that the score manipulation above works
@@ -45,7 +47,7 @@ return {
         -- I like the "ivy" layout, so I set it as the default globaly, you can
         -- still override it in different keymaps
         layout = {
-          preset = "ivy",
+          preset = "horizontal",
           -- When reaching the bottom of the results in the picker, I don't want
           -- it to cycle and go back to the top
           cycle = false,
@@ -95,6 +97,23 @@ return {
               { win = "preview", title = "{preview}", height = 0.4, border = "top" },
             },
           },
+          horizontal = {
+            layout = {
+              backdrop = false,
+              box = "horizontal",
+              width = 0.8,
+              min_width = 80,
+              height = 0.8,
+              {
+                box = "vertical",
+                border = "rounded",
+                title = "{title} {live} {flags}",
+                { win = "input", height = 1, border = "bottom" },
+                { win = "list", border = "none" },
+              },
+              { win = "preview", title = "{preview}", border = "rounded", width = 0.5 },
+            },
+          },
           matcher = {
             frecency = true,
           },
@@ -108,7 +127,6 @@ return {
           formatters = {
             file = {
               filename_first = true, -- display filename before the file path
-              truncate = 80,
             },
           },
         },
@@ -145,13 +163,15 @@ return {
       {
         "<leader><space>",
         function()
-          Snacks.picker.files {
-            finder = "files",
-            format = "file",
-            show_empty = true,
-            supports_live = true,
-            -- In case you want to override the layout for this keymap
-            -- layout = "vscode",
+          Snacks.picker.smart {
+            multi = { "buffers", "recent", "files" },
+            format = "file", -- use `file` format for all sources
+            matcher = {
+              cwd_bonus = true, -- boost cwd matches
+              frecency = true, -- use frecency boosting
+              sort_empty = true, -- sort even when the filter is empty
+            },
+            transform = "unique_file",
           }
         end,
         desc = "Smart Find Files",
@@ -168,6 +188,11 @@ return {
             unloaded = true,
             current = true,
             sort_lastused = true,
+            matcher = {
+              cwd_bonus = true, -- boost cwd matches
+              frecency = true, -- use frecency boosting
+              sort_empty = true, -- sort even when the filter is empty
+            },
             win = {
               input = {
                 keys = {
