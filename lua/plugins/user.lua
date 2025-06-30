@@ -10,6 +10,12 @@ return {
   {
     "folke/snacks.nvim",
     opts = {
+      scratch = {
+        win = {
+          backdrop = true,
+          border = "none",
+        },
+      },
       bigfile = { enabled = true },
       explorer = { enabled = false },
       indent = { enabled = false },
@@ -165,7 +171,7 @@ return {
         function()
           Snacks.picker.smart {
             on_show = function() vim.cmd.stopinsert() end,
-            multi = { "buffers", "recent", "files" },
+            multi = { "files" },
             format = "file", -- use `file` format for all sources
             matcher = {
               cwd_bonus = true, -- boost cwd matches
@@ -231,7 +237,13 @@ return {
       { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
       { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
       { "<leader>.", function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
-      { "<leader>S", function() Snacks.scratch.select() end, desc = "Select Scratch Buffer" },
+      {
+        "<leader>S",
+        function()
+          Snacks.scratch.select()
+        end,
+        desc = "Select Scratch Buffer",
+      },
       { "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notification History" },
       { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
       { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
