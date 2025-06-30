@@ -164,6 +164,7 @@ return {
         "<leader><space>",
         function()
           Snacks.picker.smart {
+            on_show = function() vim.cmd.stopinsert() end,
             multi = { "buffers", "recent", "files" },
             format = "file", -- use `file` format for all sources
             matcher = {
