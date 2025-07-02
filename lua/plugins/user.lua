@@ -313,6 +313,8 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
+      "j-hui/fidget.nvim",                    -- Display status
+      "ravitemer/codecompanion-history.nvim", -- Save and load conversation history
     },
     opts = {
       extensions = {
@@ -447,18 +449,24 @@ return {
         "<cmd>Yazi cwd<cr>",
         desc = "Open the file manager in nvim's working directory",
       },
-      {
-        "<c-up>",
-        "<cmd>Yazi toggle<cr>",
-        desc = "Resume the last yazi session",
-      },
     },
     ---@type YaziConfig | {}
     opts = {
       -- if you want to open yazi instead of netrw, see below for more info
       open_for_directories = false,
+      highlight_groups = {
+        -- See https://github.com/mikavilpas/yazi.nvim/pull/180
+        hovered_buffer = false,
+        -- See https://github.com/mikavilpas/yazi.nvim/pull/351
+        hovered_buffer_in_same_directory = false,
+      },
+      yazi_floating_window_border = "none",
+      floating_window_scaling_factor = 1,
       keymaps = {
         show_help = "<f1>",
+        open_file_in_vertical_split = "<c-v>",
+        open_file_in_horizontal_split = "<c-x>",
+        open_file_in_tab = "<c-t>",
       },
     },
     -- 👇 if you use `open_for_directories=true`, this is recommended
