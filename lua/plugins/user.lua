@@ -454,12 +454,6 @@ return {
     opts = {
       -- if you want to open yazi instead of netrw, see below for more info
       open_for_directories = false,
-      highlight_groups = {
-        -- See https://github.com/mikavilpas/yazi.nvim/pull/180
-        hovered_buffer = false,
-        -- See https://github.com/mikavilpas/yazi.nvim/pull/351
-        hovered_buffer_in_same_directory = false,
-      },
       yazi_floating_window_border = "none",
       floating_window_scaling_factor = 1,
       keymaps = {
