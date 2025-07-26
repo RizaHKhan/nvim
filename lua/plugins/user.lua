@@ -35,9 +35,9 @@ return {
           -- end
           -- Demote test files:
           if
-              item.file:match "[_/\\]tests?[/\\]"
-              or item.file:match "[._-]test[._%-]"
-              or item.file:match "[._-]spec[._%-]"
+            item.file:match "[_/\\]tests?[/\\]"
+            or item.file:match "[._-]test[._%-]"
+            or item.file:match "[._-]spec[._%-]"
           then
             item.score_add = (item.score_add or 0) - 50
           end
@@ -80,7 +80,7 @@ return {
               { win = "input", height = 1, border = "bottom" },
               {
                 box = "horizontal",
-                { win = "list",    border = "none" },
+                { win = "list", border = "none" },
                 { win = "preview", title = "{preview}", width = 0.5, border = "left" },
               },
             },
@@ -98,9 +98,9 @@ return {
               border = "rounded",
               title = "{title} {live} {flags}",
               title_pos = "center",
-              { win = "input",   height = 1,          border = "bottom" },
-              { win = "list",    border = "none" },
-              { win = "preview", title = "{preview}", height = 0.4,     border = "top" },
+              { win = "input", height = 1, border = "bottom" },
+              { win = "list", border = "none" },
+              { win = "preview", title = "{preview}", height = 0.4, border = "top" },
             },
           },
           horizontal = {
@@ -114,8 +114,8 @@ return {
                 box = "vertical",
                 border = "rounded",
                 title = "{title} {live} {flags}",
-                { win = "input", height = 1,     border = "bottom" },
-                { win = "list",  border = "none" },
+                { win = "input", height = 1, border = "bottom" },
+                { win = "list", border = "none" },
               },
               { win = "preview", title = "{preview}", border = "rounded", width = 0.5 },
             },
@@ -172,10 +172,10 @@ return {
           Snacks.picker.smart {
             on_show = function() vim.cmd.stopinsert() end,
             multi = { "files" },
-            format = "file",     -- use `file` format for all sources
+            format = "file", -- use `file` format for all sources
             matcher = {
-              cwd_bonus = true,  -- boost cwd matches
-              frecency = true,   -- use frecency boosting
+              cwd_bonus = true, -- boost cwd matches
+              frecency = true, -- use frecency boosting
               sort_empty = true, -- sort even when the filter is empty
             },
             transform = "unique_file",
@@ -196,8 +196,8 @@ return {
             current = true,
             sort_lastused = true,
             matcher = {
-              cwd_bonus = true,  -- boost cwd matches
-              frecency = true,   -- use frecency boosting
+              cwd_bonus = true, -- boost cwd matches
+              frecency = true, -- use frecency boosting
               sort_empty = true, -- sort even when the filter is empty
             },
             win = {
@@ -223,30 +223,30 @@ return {
         end,
         desc = "Git Status Files",
       },
-      { "<leader>/", function() Snacks.picker.grep() end,             desc = "Grep" },
-      { "<leader>:", function() Snacks.picker.command_history() end,  desc = "Command History" },
-      { "<leader>n", function() Snacks.picker.notifications() end,    desc = "Notification History" },
-      { "gd",        function() Snacks.picker.lsp_definitions() end,  desc = "Goto Definition" },
-      { "gD",        function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },
+      { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
+      { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
+      { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
+      { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
+      { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },
       {
         "gr",
         function() Snacks.picker.lsp_references() end,
         nowait = true,
         desc = "References",
       },
-      { "gI",        function() Snacks.picker.lsp_implementations() end,  desc = "Goto Implementation" },
-      { "gy",        function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
-      { "<leader>.", function() Snacks.scratch() end,                     desc = "Toggle Scratch Buffer" },
+      { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
+      { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
+      { "<leader>.", function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
       {
         "<leader>S",
         function() Snacks.scratch.select() end,
         desc = "Select Scratch Buffer",
       },
-      { "<leader>n",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
-      { "<leader>gg", function() Snacks.lazygit() end,               desc = "Lazygit" },
-      { "<leader>un", function() Snacks.notifier.hide() end,         desc = "Dismiss All Notifications" },
-      { "<c-/>",      function() Snacks.terminal() end,              desc = "Toggle Terminal" },
-      { "<c-_>",      function() Snacks.terminal() end,              desc = "which_key_ignore" },
+      { "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notification History" },
+      { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
+      { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
+      { "<c-/>", function() Snacks.terminal() end, desc = "Toggle Terminal" },
+      { "<c-_>", function() Snacks.terminal() end, desc = "which_key_ignore" },
       {
         "]]",
         function() Snacks.words.jump(vim.v.count1) end,
@@ -269,7 +269,7 @@ return {
   {
     "L3MON4D3/LuaSnip",
     config = function(plugin, opts)
-      require "astronvim.plugins.configs.luasnip" (plugin, opts) -- include the default astronvim config that calls the setup call
+      require "astronvim.plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
       -- add more custom luasnip configuration such as filetype extend or custom snippets
       local luasnip = require "luasnip"
       luasnip.filetype_extend("javascript", { "javascriptreact" })
@@ -279,7 +279,7 @@ return {
   {
     "windwp/nvim-autopairs",
     config = function(plugin, opts)
-      require "astronvim.plugins.configs.nvim-autopairs" (plugin, opts) -- include the default astronvim config that calls the setup call
+      require "astronvim.plugins.configs.nvim-autopairs"(plugin, opts) -- include the default astronvim config that calls the setup call
       -- add more custom autopairs configuration such as custom rules
       local npairs = require "nvim-autopairs"
       local Rule = require "nvim-autopairs.rule"
@@ -287,18 +287,18 @@ return {
       npairs.add_rules(
         {
           Rule("$", "$", { "tex", "latex" })
-          -- don't add a pair if the next character is %
-              :with_pair(cond.not_after_regex "%%")
-          -- don't add a pair if  the previous character is xxx
-              :with_pair(
-                cond.not_before_regex("xxx", 3)
-              )
-          -- don't move right when repeat character
-              :with_move(cond.none())
-          -- don't delete if the next character is xx
-              :with_del(cond.not_after_regex "xx")
-          -- disable adding a newline when you press <cr>
-              :with_cr(cond.none()),
+            -- don't add a pair if the next character is %
+            :with_pair(cond.not_after_regex "%%")
+            -- don't add a pair if  the previous character is xxx
+            :with_pair(
+              cond.not_before_regex("xxx", 3)
+            )
+            -- don't move right when repeat character
+            :with_move(cond.none())
+            -- don't delete if the next character is xx
+            :with_del(cond.not_after_regex "xx")
+            -- disable adding a newline when you press <cr>
+            :with_cr(cond.none()),
         },
         -- disable for .vim files, but it work for another filetypes
         Rule("a", "a", "-vim")
@@ -311,7 +311,7 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
-      "j-hui/fidget.nvim",                    -- Display status
+      "j-hui/fidget.nvim", -- Display status
       "ravitemer/codecompanion-history.nvim", -- Save and load conversation history
     },
     opts = {
@@ -320,7 +320,7 @@ return {
           callback = "mcphub.extensions.codecompanion",
           opts = {
             show_result_in_chat = true, -- Show mcp tool results in chat
-            make_vars = true,           -- Convert resources to #variables
+            make_vars = true, -- Convert resources to #variables
             make_slash_commands = true, -- Add prompts as /slash commands
           },
         },
@@ -371,8 +371,8 @@ return {
   },
   {
     "okuuva/auto-save.nvim",
-    version = "^1.0.0",                       -- see https://devhints.io/semver, alternatively use '*' to use the latest tagged release
-    cmd = "ASToggle",                         -- optional for lazy loading on command
+    version = "^1.0.0", -- see https://devhints.io/semver, alternatively use '*' to use the latest tagged release
+    cmd = "ASToggle", -- optional for lazy loading on command
     event = { "InsertLeave", "TextChanged" }, -- optional for lazy loading on trigger events
     opts = {
       -- your config goes here
