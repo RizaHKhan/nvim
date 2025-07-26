@@ -226,8 +226,24 @@ return {
       { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
       { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
       { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
-      { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
-      { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },
+      {
+        "gd",
+        function()
+          Snacks.picker.lsp_definitions {
+            focus = "list",
+          }
+        end,
+        desc = "Goto Definition",
+      },
+      {
+        "gD",
+        function()
+          Snacks.picker.lsp_declarations {
+            focus = "list",
+          }
+        end,
+        desc = "Goto Declaration",
+      },
       {
         "gr",
         function() Snacks.picker.lsp_references() end,
@@ -239,9 +255,7 @@ return {
       { "<leader>.", function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
       {
         "<leader>S",
-        function()
-          Snacks.scratch.select()
-        end,
+        function() Snacks.scratch.select() end,
         desc = "Select Scratch Buffer",
       },
       { "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notification History" },
@@ -313,7 +327,7 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
-      "j-hui/fidget.nvim",                    -- Display status
+      "j-hui/fidget.nvim", -- Display status
       "ravitemer/codecompanion-history.nvim", -- Save and load conversation history
     },
     opts = {
