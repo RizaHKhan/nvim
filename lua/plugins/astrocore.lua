@@ -19,8 +19,11 @@ return {
     },
     -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
     diagnostics = {
-      virtual_text = true,
+      virtual_text = false,
+      virtual_lines = true, -- Neovim v0.11+ only
+      update_in_insert = false,
       underline = false,
+      severity_sort = true,
     },
     -- vim options can be configured here
     options = {
