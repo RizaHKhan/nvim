@@ -19,8 +19,8 @@ return {
     },
     -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
     diagnostics = {
-      virtual_text = true,
-      virtual_lines = false, -- Neovim v0.11+ only
+      virtual_text = false,
+      virtual_lines = true, -- Neovim v0.11+ only
       update_in_insert = false,
       underline = false,
       severity_sort = true,
