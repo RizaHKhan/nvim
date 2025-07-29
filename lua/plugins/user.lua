@@ -70,7 +70,7 @@ return {
           ivy = {
             layout = {
               box = "vertical",
-              backdrop = false,
+              backdrop = true,
               row = -1,
               width = 0,
               height = 0.5,
@@ -89,13 +89,13 @@ return {
           --
           vertical = {
             layout = {
-              backdrop = false,
+              backdrop = true,
               width = 0.8,
               min_width = 80,
               height = 0.8,
               min_height = 30,
               box = "vertical",
-              border = "rounded",
+              border = "none",
               title = "{title} {live} {flags}",
               title_pos = "center",
               { win = "input", height = 1, border = "bottom" },
@@ -105,19 +105,19 @@ return {
           },
           horizontal = {
             layout = {
-              backdrop = false,
+              backdrop = true,
               box = "horizontal",
               width = 0.8,
               min_width = 80,
               height = 0.8,
               {
                 box = "vertical",
-                border = "rounded",
+                border = "none",
                 title = "{title} {live} {flags}",
                 { win = "input", height = 1, border = "bottom" },
                 { win = "list", border = "none" },
               },
-              { win = "preview", title = "{preview}", border = "rounded", width = 0.5 },
+              { win = "preview", title = "{preview}", border = "none", width = 0.5 },
             },
           },
           matcher = {
