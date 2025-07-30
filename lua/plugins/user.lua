@@ -16,6 +16,9 @@ return {
           border = "none",
         },
       },
+      git = {
+        enabled = true,
+      },
       bigfile = { enabled = true },
       explorer = { enabled = false },
       indent = { enabled = false },
@@ -259,6 +262,11 @@ return {
         desc = "Select Scratch Buffer",
       },
       { "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notification History" },
+      {
+        "B",
+        function() Snacks.git.blame_line() end,
+        desc = "Git Blame",
+      },
       { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
       { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
       { "<c-/>", function() Snacks.terminal() end, desc = "Toggle Terminal" },
