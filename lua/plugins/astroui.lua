@@ -10,14 +10,14 @@ return {
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
-    colorscheme = "onedark_vivid", -- set the colorscheme to use
+    colorscheme = "astrodark", -- set the colorscheme to use
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
       init = { -- this table overrides highlights in all themes
-        -- WinSeparator = { fg = "#606060" }, -- even darker gray
+        NormalNC = { bg = "NONE" }, -- set the background of NormalNC to transparent
+        WinSeparator = { fg = "#404040" },
       },
       astrodark = { -- a table of overrides/changes when applying the astrotheme theme
-        -- Normal = { bg = "#000000" },
       },
     },
     -- Icons can be configured throughout the interface
