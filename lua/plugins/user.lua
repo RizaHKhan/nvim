@@ -455,8 +455,4 @@ return {
     version = "2.*",
     config = function() require("window-picker").setup() end,
   },
-  {
-    "olimorris/onedarkpro.nvim",
-    priority = 1000, -- Ensure it loads first
-  },
 }
