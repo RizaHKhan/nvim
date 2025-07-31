@@ -9,15 +9,17 @@ return {
   "AstroNvim/astroui",
   ---@type AstroUIOpts
   opts = {
+    style = {
+      inactive = false,
+    },
     -- change colorscheme
     colorscheme = "astrodark", -- set the colorscheme to use
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
-      init = { -- this table overrides highlights in all themes
+      init = {}, -- this table overrides highlights in all themes
+      astrodark = { -- a table of overrides/changes when applying the astrotheme theme
         NormalNC = { bg = "NONE" }, -- set the background of NormalNC to transparent
         WinSeparator = { fg = "#404040" },
-      },
-      astrodark = { -- a table of overrides/changes when applying the astrotheme theme
       },
     },
     -- Icons can be configured throughout the interface
