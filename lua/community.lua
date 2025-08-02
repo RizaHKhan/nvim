@@ -30,7 +30,6 @@ return {
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.sql" },
   { import = "astrocommunity.pack.typescript-all-in-one" },
-  { import = "astrocommunity.pack.vue" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.quickfix.nvim-bqf" },
   { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
