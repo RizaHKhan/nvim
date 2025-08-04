@@ -5,7 +5,7 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
-    "antosha417/nvim-lsp-file-operations"
+    "antosha417/nvim-lsp-file-operations",
   },
   opts = function(_, opts)
     local function on_move(data) Snacks.rename.on_rename_file(data.source, data.destination) end

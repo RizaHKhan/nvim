@@ -68,6 +68,7 @@ return {
           desc = "Yank JSONPath",
           buffer = true,
         },
+        ["<leader>so"] = { cmd = ":update<CR>:source<CR>", desc = "Source AstroNvim" },
       },
       v = {
         ["A"] = { cmd = ":CodeCompanionActions<cr>", desc = "Code Companion Actions" },
