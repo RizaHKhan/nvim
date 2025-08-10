@@ -456,9 +456,22 @@ return {
         "A7Lavinraj/fyler.nvim",
         dependencies = { "echasnovski/mini.icons" },
         branch = "stable",
-        opts = {},
+        opts = {
+            views = {
+                explorer = {
+                    confirm_simple = true,
+                    win = {
+                        kind_presets = {
+                            split_left_most = {
+                                width = "0.2rel",
+                            },
+                        },
+                    },
+                },
+            },
+        },
         keys = {
-            { "=", "<cmd>:Fyler kind=split_left_most<CR>" },
+            { "=", "<cmd>:Fyler toggle kind=split_left_most<CR>" },
         },
     },
 }
