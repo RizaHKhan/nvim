@@ -432,13 +432,6 @@ return {
         opts = {},
     },
     {
-        "phelipetls/jsonpath.nvim",
-        enabled = true,
-        dependencies = {
-            "nvim-treesitter/nvim-treesitter",
-        },
-    },
-    {
         "s1n7ax/nvim-window-picker",
         name = "window-picker",
         event = "VeryLazy",
@@ -464,5 +457,8 @@ return {
         dependencies = { "echasnovski/mini.icons" },
         branch = "stable",
         opts = {},
+        keys = {
+            { "=", "<cmd>:Fyler kind=split_left_most<CR>" },
+        },
     },
 }

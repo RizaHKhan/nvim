@@ -14,7 +14,6 @@ return {
     { import = "astrocommunity.docker.lazydocker" },
     { import = "astrocommunity.editing-support.neogen" },
     { import = "astrocommunity.editing-support.treesj" },
-    { import = "astrocommunity.file-explorer.oil-nvim" },
     { import = "astrocommunity.git.diffview-nvim" },
     { import = "astrocommunity.git.octo-nvim" },
     { import = "astrocommunity.motion.flit-nvim" },
