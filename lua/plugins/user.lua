@@ -418,7 +418,7 @@ return {
             global_keymaps = true,
             global_keymaps_prefix = "<leader>R",
 
-            ui = { formatter = true },
+            ui = { formatter = true, max_response_size = 10000000 },
             debug = true,
         },
     },
