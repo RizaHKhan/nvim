@@ -417,8 +417,27 @@ return {
         opts = {
             global_keymaps = true,
             global_keymaps_prefix = "<leader>R",
-
-            ui = { formatter = true, max_response_size = 10000000 },
+            contenttypes = {
+                ["application/json"] = {
+                    ft = "json",
+                    formatter = { "jq", "." },
+                    pathresolver = require("kulala.parser.jsonpath").parse,
+                },
+                ["application/xml"] = {
+                    ft = "xml",
+                    formatter = { "xmllint", "--format", "-" },
+                    pathresolver = { "xmllint", "--xpath", "{{path}}", "-" },
+                },
+                ["text/html"] = {
+                    ft = "html",
+                    formatter = { "xmllint", "--format", "--html", "-" },
+                    pathresolver = {},
+                },
+            },
+            ui = {
+                formatter = true,
+                max_response_size = 10000000,
+            },
             debug = true,
         },
     },
