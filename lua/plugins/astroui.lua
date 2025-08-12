@@ -18,6 +18,7 @@ return {
         highlights = {
             init = {}, -- this table overrides highlights in all themes
             astrodark = { -- a table of overrides/changes when applying the astrotheme theme
+                Normal = { bg = "#212830" },
                 NormalNC = { bg = "NONE" }, -- set the background of NormalNC to transparent
                 WinSeparator = { fg = "#404040" },
             },
