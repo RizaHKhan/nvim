@@ -490,7 +490,7 @@ return {
             },
         },
         keys = {
-            { "=", "<cmd>:Fyler toggle kind=split_left_most<CR>" },
+            { "=", ":Fyler kind=split:leftmost<CR>" },
         },
     },
 }
