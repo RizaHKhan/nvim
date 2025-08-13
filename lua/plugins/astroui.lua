@@ -21,6 +21,9 @@ return {
                 Normal = { bg = "#212830" },
                 NormalNC = { bg = "NONE" }, -- set the background of NormalNC to transparent
                 WinSeparator = { fg = "#404040" },
+                NeoTreeNormal = { bg = "#151b23" }, -- set the background of NeoTreeNormal to match Normal
+                SignColumn = { bg = "NONE" }, -- set the background of SignColumn to match Normal
+                NeoTreeWinSeparator = { bg = "#151b23", fg = "#151b23" }, -- set the background of NeoTreeWinSeparator to match Normal
             },
         },
         -- Icons can be configured throughout the interface
