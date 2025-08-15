@@ -25,6 +25,8 @@ return {
                 hl = { bg = "#212830" },
                 status.component.file_info {
                     filename = { fallback = "Empty" },
+                    filetype = false,
+                    file_read_only = false,
                     padding = { right = 2 },
                     surround = { separator = "left", condition = false, color = "file_info_bg" },
                 },
