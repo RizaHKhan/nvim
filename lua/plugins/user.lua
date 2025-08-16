@@ -229,7 +229,20 @@ return {
                 desc = "Git Status Files",
             },
             { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
-            { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
+            {
+                "<leader>:",
+                function()
+                    Snacks.picker.command_history {
+                        on_show = function() vim.cmd.stopinsert() end,
+                        preview = "none",
+                        formatters = { text = { ft = "vim" } },
+                        layout = {
+                            preset = "vertical",
+                        },
+                    }
+                end,
+                desc = "Command History",
+            },
             { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
             {
                 "gd",
