@@ -254,6 +254,15 @@ return {
                 desc = "Goto Definition",
             },
             {
+                "<leader>D",
+                function()
+                    Snacks.picker.diagnostics_buffer {
+                        on_show = function() vim.cmd.stopinsert() end,
+                    }
+                end,
+                desc = "Goto Definition",
+            },
+            {
                 "gD",
                 function()
                     Snacks.picker.lsp_declarations {
