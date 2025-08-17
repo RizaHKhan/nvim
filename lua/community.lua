@@ -13,6 +13,7 @@ return {
     { import = "astrocommunity.diagnostics.trouble-nvim" },
     { import = "astrocommunity.editing-support.neogen" },
     { import = "astrocommunity.editing-support.treesj" },
+    { import = "astrocommunity.file-explorer.oil-nvim" },
     { import = "astrocommunity.git.diffview-nvim" },
     { import = "astrocommunity.motion.flit-nvim" },
     { import = "astrocommunity.motion.mini-move" },

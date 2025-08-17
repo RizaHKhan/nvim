@@ -493,13 +493,4 @@ return {
             { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
         },
     },
-    {
-        "echasnovski/mini.files",
-        version = false,
-        config = function() require("mini.files").setup() end,
-        opts = {},
-        keys = {
-            { "=", function() require("mini.files").open() end, mode = "n" },
-        },
-    },
 }

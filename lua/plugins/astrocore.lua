@@ -58,7 +58,7 @@ return {
                 [";d"] = { cmd = ":DiffviewOpen<cr>", desc = "Open Diffview" },
                 [";;"] = { cmd = ":DiffviewClose<cr>", desc = "Close Diffview" },
                 [";h"] = { cmd = "<cmd>DiffviewFileHistory --follow %<cr>", desc = "Close Diffview" },
-                -- ["="] = { cmd = function() require("fyler").open { kind = "split_left_most" } end, desc = "Fyler" },
+                ["="] = { cmd = "<cmd>Oil<cr>", desc = "Oil" },
                 ["<leader>k"] = { cmd = function() vim.lsp.buf.hover() end, desc = "hover.nvim" },
                 ["<leader>dw"] = { cmd = ":DapViewWatch<cr>", desc = "Watch" },
                 ["<leader>W"] = { cmd = ":Telescope neorg switch_workspace<cr>" },
