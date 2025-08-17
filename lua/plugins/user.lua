@@ -494,25 +494,12 @@ return {
         },
     },
     {
-        "A7Lavinraj/fyler.nvim",
-        dependencies = { "echasnovski/mini.icons" },
-        branch = "stable",
-        opts = {
-            views = {
-                explorer = {
-                    confirm_simple = true,
-                    win = {
-                        kind_presets = {
-                            split_left_most = {
-                                width = "0.2rel",
-                            },
-                        },
-                    },
-                },
-            },
-        },
+        "echasnovski/mini.files",
+        version = false,
+        config = function() require("mini.files").setup() end,
+        opts = {},
         keys = {
-            { "=", ":Fyler kind=split:leftmost<CR>" },
+            { "=", function() require("mini.files").open() end, mode = "n" },
         },
     },
 }
