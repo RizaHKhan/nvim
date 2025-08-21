@@ -64,6 +64,27 @@ return {
                 ["<leader>W"] = { cmd = ":Telescope neorg switch_workspace<cr>" },
                 ["M"] = { cmd = ":MCPHub<cr>", desc = "MCP Hub" },
                 ["<leader>so"] = { cmd = ":update<CR>:source<CR>", desc = "Source AstroNvim" },
+                [".."] = {
+                    cmd = function()
+                        local word = vim.fn.expand "<cWORD>"
+                        local row = unpack(vim.api.nvim_win_get_cursor(0))
+                        local line = vim.api.nvim_get_current_line()
+                        local s, e = line:find(word, 1, true)
+                        if s and e then
+                            local new_line = line:sub(1, s - 1)
+                                .. "<"
+                                .. word
+                                .. "></"
+                                .. word
+                                .. ">"
+                                .. line:sub(e + 1)
+                            vim.api.nvim_set_current_line(new_line)
+                            vim.api.nvim_win_set_cursor(0, { row, s + #word + 1 })
+                            vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("i", true, false, true), "n", true)
+                        end
+                    end,
+                    desc = "Wrap word in HTML tag, place cursor inside, and enter insert mode",
+                },
             },
             v = {
                 ["A"] = { cmd = ":CodeCompanionActions<cr>", desc = "Code Companion Actions" },

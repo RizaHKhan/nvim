@@ -28,6 +28,8 @@ return {
     { import = "astrocommunity.pack.sql" },
     { import = "astrocommunity.pack.typescript-all-in-one" },
     { import = "astrocommunity.pack.yaml" },
+    { import = "astrocommunity.pack.nginx" },
+    { import = "astrocommunity.pack.vue" },
     { import = "astrocommunity.quickfix.nvim-bqf" },
     { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
     { import = "astrocommunity.recipes.auto-session-restore" },
@@ -37,5 +39,6 @@ return {
     { import = "astrocommunity.search.grug-far-nvim" },
     { import = "astrocommunity.test.neotest" },
     { import = "astrocommunity.utility.lua-json5" },
+    { import = "astrocommunity.utility.hover-nvim" },
     { import = "astrocommunity.utility.noice-nvim" },
 }
