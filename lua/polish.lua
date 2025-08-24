@@ -12,3 +12,4 @@ vim.filetype.add {
 vim.opt.iskeyword:append { "-", "$" }
 vim.opt.conceallevel = 2
 vim.opt.swapfile = false
+vim.keymap.set('x', 'p', '"_dP', { silent = true })
