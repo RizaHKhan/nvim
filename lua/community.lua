@@ -39,6 +39,5 @@ return {
     { import = "astrocommunity.search.grug-far-nvim" },
     { import = "astrocommunity.test.neotest" },
     { import = "astrocommunity.utility.lua-json5" },
-    { import = "astrocommunity.utility.hover-nvim" },
     { import = "astrocommunity.utility.noice-nvim" },
 }
