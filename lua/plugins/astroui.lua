@@ -13,10 +13,17 @@ return {
             inactive = false,
         },
         -- change colorscheme
-        colorscheme = "astrodark", -- set the colorscheme to use
+        colorscheme = "everforest", -- set the colorscheme to use
         -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
         highlights = {
-            init = {}, -- this table overrides highlights in all themes
+            init = {
+                -- Normal = { bg = "#212830" },
+                NormalNC = { bg = "NONE" }, -- set the background of NormalNC to transparent
+                WinSeparator = { fg = "#404040" },
+                -- NeoTreeNormal = { bg = "#151b23" }, -- set the background of NeoTreeNormal to match Normal
+                SignColumn = { bg = "NONE" }, -- set the background of SignColumn to match Normal
+                NeoTreeWinSeparator = { bg = "#232A2E", fg = "#232A2E" }, -- set the background of NeoTreeWinSeparator to match Normal
+            }, -- this table overrides highlights in all themes
             astrodark = { -- a table of overrides/changes when applying the astrotheme theme
                 Normal = { bg = "#212830" },
                 NormalNC = { bg = "NONE" }, -- set the background of NormalNC to transparent

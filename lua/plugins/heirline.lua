@@ -22,7 +22,7 @@ return {
                 },
             },
             {
-                hl = { bg = "#212830" },
+                hl = { bg = "#2D353B" },
                 status.component.file_info {
                     filename = { fallback = "Empty" },
                     filetype = false,
