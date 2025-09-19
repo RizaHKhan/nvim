@@ -451,11 +451,11 @@ return {
             global_keymaps = true,
             global_keymaps_prefix = "<leader>R",
             contenttypes = {
-                ["application/json"] = {
-                    ft = "json",
-                    formatter = { "jq", "." },
-                    pathresolver = require("kulala.parser.jsonpath").parse,
-                },
+                -- ["application/json"] = {
+                --     ft = "json",
+                --     formatter = { "jq", "." },
+                --     pathresolver = require("kulala.parser.jsonpath").parse,
+                -- },
                 ["application/xml"] = {
                     ft = "xml",
                     formatter = { "xmllint", "--format", "-" },
