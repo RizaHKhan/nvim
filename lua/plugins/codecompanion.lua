@@ -6,6 +6,7 @@ return {
         "nvim-treesitter/nvim-treesitter",
         "j-hui/fidget.nvim", -- Display status
         "ravitemer/codecompanion-history.nvim", -- Save and load conversation history
+        "dyamon/codecompanion-filewise.nvim",
     },
     opts = {
         extensions = {
