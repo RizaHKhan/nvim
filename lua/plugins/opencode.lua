@@ -1,3 +1,8 @@
+-- Install opencode:
+--    npm i -g opencode-ai@latest
+-- Run:
+--    opencode auth login
+
 return {
     "NickvanDyke/opencode.nvim",
     dependencies = {
