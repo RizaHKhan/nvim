@@ -89,6 +89,7 @@ return {
             v = {
                 ["A"] = { cmd = function() require("opencode").ask("@this: ", { submit = true }) end, desc = "Code Companion Actions" },
                 ["L"] = { cmd = function() require("opencode").select() end, desc = "Select Prompt" },
+                ["+"] = { cmd = function() require("opencode").prompt("@this") end, desc = "Select Prompt" },
             },
         },
     },
