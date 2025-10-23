@@ -91,6 +91,7 @@ return {
                 ["E"] = { cmd = ":'<,'>CodeCompanion /explain<cr>", desc = "Explain Code" },
                 ["F"] = { cmd = ":'<,'>CodeCompanion /fix<cr>", desc = "Fix Code" },
                 ["T"] = { cmd = ":'<,'>CodeCompanion /tests<cr>", desc = "Create Tests" },
+                ["+"] = { cmd = function() require('opencode').prompt("@this") end, desc = "Add to Opencode" },
             },
         },
     },
