@@ -46,7 +46,7 @@ return {
                 status.component.builder {
                     { provider = function() return string.format("%d:%d", vim.fn.line ".", vim.fn.col ".") end },
                     surround = { separator = "right", condition = false, color = "file_info_bg" },
-                    padding = { left = 1, right = 1 },
+                    padding = { left = 0, right = 1 },
                 },
             },
         }
