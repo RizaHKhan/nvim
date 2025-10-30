@@ -19,7 +19,7 @@ return {
             init = {
                 -- Normal = { bg = "#212830" },
                 NormalNC = { bg = "NONE" }, -- set the background of NormalNC to transparent
-                WinSeparator = { fg = "#fff" },
+                WinSeparator = { fg = "#ffffff" },
                 -- NeoTreeNormal = { bg = "#151b23" }, -- set the background of NeoTreeNormal to match Normal
                 SignColumn = { bg = "NONE" }, -- set the background of SignColumn to match Normal
                 NeoTreeWinSeparator = { bg = "#232A2E", fg = "#232A2E" }, -- set the background of NeoTreeWinSeparator to match Normal
