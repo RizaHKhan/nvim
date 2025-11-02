@@ -2,6 +2,11 @@
 return {
     "folke/snacks.nvim",
     opts = {
+        gh = {
+            -- your gh configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        },
         scratch = {
             win = {
                 backdrop = true,
@@ -241,6 +246,7 @@ return {
             nowait = true,
             desc = "References",
         },
+        { "gi", function() Snacks.gh.issue() end, desc = "Git Issues" },
         { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
         { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
         { "<leader>.", function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
