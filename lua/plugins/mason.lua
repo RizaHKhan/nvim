@@ -14,6 +14,8 @@ return {
             ensure_installed = {
                 -- install language servers
                 "lua-language-server",
+                "laravel-ls",
+                "phpactor",
 
                 -- install formatters
                 "stylua",
