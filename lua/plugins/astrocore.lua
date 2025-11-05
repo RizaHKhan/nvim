@@ -87,38 +87,20 @@ return {
                 },
                 ["<leader>j"] = {
                     cmd = function()
-                        local tmux = os.getenv "TMUX"
-                        if not tmux then
-                            vim.notify("Not in a tmux session", vim.log.levels.WARN)
-                            return
-                        end
-
-                        local filepath = vim.fn.expand "%:p"
-                        if filepath == "" or filepath == vim.fn.getcwd() then
-                            vim.notify("No file to open", vim.log.levels.WARN)
-                            return
-                        end
-
-                        local filetype = vim.bo.filetype
-                        local cmd
-                        if filetype == "json" then
-                            cmd = "cat " .. vim.fn.shellescape(filepath) .. " | jqp"
-                        elseif filetype == "yaml" then
-                            cmd = "yq . " .. vim.fn.shellescape(filepath) .. " | jqp"
-                        else
-                            vim.notify("Not a JSON or YAML file", vim.log.levels.WARN)
-                            return
-                        end
-
-                        vim.fn.system({ "tmux", "kill-window", "-t", "jqp" })
-                        vim.fn.system({ "tmux", "new-window", "-n", "jqp", "$SHELL" })
-                        vim.fn.system({ "tmux", "send-keys", "-t", "jqp", cmd, "Enter" })
-                        local result = ""
-                        if vim.v.shell_error ~= 0 then
-                            vim.notify("Failed to open jqp: " .. result, vim.log.levels.ERROR)
-                        end
+                        require("jq").run {
+                            toggle = true,
+                            commands = {
+                                {
+                                    command = "yq",
+                                    filetype = "json",
+                                    arguments = "-r",
+                                },
+                            },
+                            arguments = "",
+                            query = "."
+                        }
                     end,
-                    desc = "Open JSON/YAML in jqp (tmux)",
+                    desc = "yq",
                 },
             },
             v = {
@@ -126,7 +108,7 @@ return {
                 ["E"] = { cmd = ":'<,'>CodeCompanion /explain<cr>", desc = "Explain Code" },
                 ["F"] = { cmd = ":'<,'>CodeCompanion /fix<cr>", desc = "Fix Code" },
                 ["T"] = { cmd = ":'<,'>CodeCompanion /tests<cr>", desc = "Create Tests" },
-                ["+"] = { cmd = function() require('opencode').prompt("@this") end, desc = "Add to Opencode" },
+                ["+"] = { cmd = function() require("opencode").prompt "@this" end, desc = "Add to Opencode" },
             },
         },
     },

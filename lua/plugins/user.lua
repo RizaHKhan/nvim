@@ -168,4 +168,12 @@ return {
             { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
         },
     },
+    {
+        "cenk1cenk2/jq.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+            "grapp-dev/nui-components.nvim",
+        },
+    },
 }
