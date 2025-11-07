@@ -175,5 +175,16 @@ return {
             "MunifTanjim/nui.nvim",
             "grapp-dev/nui-components.nvim",
         },
+        opts = {
+            ui = {
+                border = "rounded",
+                keymap = {
+                    focus_left = "<C-h>",
+                    focus_right = "<C-l>",
+                    focus_up = "<C-k>",
+                    focus_down = "<C-j>",
+                },
+            },
+        },
     },
 }
