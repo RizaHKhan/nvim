@@ -16,6 +16,7 @@ return {
     { import = "astrocommunity.editing-support.treesj" },
     { import = "astrocommunity.file-explorer.oil-nvim" },
     { import = "astrocommunity.git.diffview-nvim" },
+    { import = "astrocommunity.git.octo-nvim" },
     { import = "astrocommunity.motion.flit-nvim" },
     { import = "astrocommunity.motion.mini-move" },
     { import = "astrocommunity.motion.mini-surround" },
