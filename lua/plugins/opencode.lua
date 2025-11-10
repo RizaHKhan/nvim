@@ -12,6 +12,14 @@ return {
     },
     config = function()
         vim.g.opencode_opts = {
+            enabled = "tmux", -- or "tmux", or your custom provider (see below)
+            ---@type opencode.provider.Snacks
+            snacks = {
+                -- Customize `snacks.terminal` to your liking.
+            },
+            tmux = {
+                options = "-h", -- options to pass to `tmux split-window`
+            },
             -- Your configuration, if any — see `lua/opencode/config.lua`
         }
 
