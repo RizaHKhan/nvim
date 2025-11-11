@@ -114,6 +114,10 @@ return {
         opts = {
             global_keymaps = true,
             global_keymaps_prefix = "<leader>R",
+            kulala_keymaps = {
+                ["Show verbose"] = false,
+                ["Show headers and body"] = false,
+            },
             contenttypes = {
                 -- ["application/json"] = {
                 --     ft = "json",
@@ -134,6 +138,7 @@ return {
             ui = {
                 formatter = true,
                 max_response_size = 10000000,
+                default_winbar_panes = { "body", "script_output", "report", "help" },
             },
             debug = true,
         },
