@@ -4,6 +4,7 @@ return {
         "olimorris/neotest-phpunit",
         "nvim-neotest/neotest-jest",
         "marilari88/neotest-vitest",
+        "V13Axel/neotest-pest",
     },
     opts = {
         -- See all config options with :h neotest.Config
@@ -30,7 +31,10 @@ return {
             adapters = {
                 require "neotest-python",
                 require "neotest-vitest",
-                require "neotest-phpunit",
+                require "neotest-phpunit" {
+                    root_ignore_files = { "tests/Pest.php" },
+                },
+                require "neotest-pest" {},
                 require "neotest-jest" {
                     jestCommand = "npm test --",
                     jestConfigFile = "custom.jest.config.ts",
