@@ -8,6 +8,8 @@
 return {
     "AstroNvim/astroui",
     ---@type AstroUIOpts
+    version = false,
+    branch = "v4",
     opts = {
         style = {
             inactive = false,

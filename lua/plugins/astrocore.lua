@@ -7,6 +7,8 @@
 return {
     "AstroNvim/astrocore",
     ---@type AstroCoreOpts
+    version = false,
+    branch = "v3",
     opts = {
         -- Configure core features of AstroNvim
         features = {
@@ -97,7 +99,7 @@ return {
                                 },
                             },
                             arguments = "",
-                            query = "."
+                            query = ".",
                         }
                     end,
                     desc = "yq",
