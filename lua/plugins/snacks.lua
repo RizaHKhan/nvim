@@ -17,7 +17,7 @@ return {
             enabled = true,
         },
         bigfile = { enabled = true },
-        explorer = { enabled = false },
+        explorer = { enabled = true },
         indent = { enabled = false },
         input = { enabled = true },
         notifier = {
@@ -115,6 +115,9 @@ return {
                     },
                 },
             },
+            sources = {
+                explorer = {},
+            },
         },
         quickfile = { enabled = true },
         scope = { enabled = true },
@@ -143,6 +146,11 @@ return {
         },
     },
     keys = {
+        {
+            "<leader>e",
+            function() Snacks.picker.explorer {} end,
+            desc = "Snacks Explorer",
+        },
         {
             "<leader><space>",
             function()
