@@ -87,23 +87,6 @@ return {
                     end,
                     desc = "Wrap word in HTML tag, place cursor inside, and enter insert mode",
                 },
-                ["<leader>j"] = {
-                    cmd = function()
-                        require("jq").run {
-                            toggle = true,
-                            commands = {
-                                {
-                                    command = "yq",
-                                    filetype = "json",
-                                    arguments = "-r",
-                                },
-                            },
-                            arguments = "",
-                            query = ".",
-                        }
-                    end,
-                    desc = "yq",
-                },
             },
             v = {
                 ["A"] = { cmd = ":CodeCompanionActions<cr>", desc = "Code Companion Actions" },

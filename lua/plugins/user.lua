@@ -174,26 +174,16 @@ return {
         },
     },
     {
-        "cenk1cenk2/jq.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "MunifTanjim/nui.nvim",
-            "grapp-dev/nui-components.nvim",
-        },
-        opts = {
-            ui = {
-                border = "rounded",
-                keymap = {
-                    focus_left = "<C-h>",
-                    focus_right = "<C-l>",
-                    focus_up = "<C-k>",
-                    focus_down = "<C-j>",
-                },
-            },
-        },
-    },
-    {
         "ywpkwon/yank-path.nvim",
         config = function() require("yank-path").setup() end,
+    },
+    {
+        "RizaHKhan/filter.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+        config = function()
+            require("filter").setup()
+        end,
     },
 }
