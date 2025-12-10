@@ -2,6 +2,7 @@
 return {
     "folke/snacks.nvim",
     opts = {
+        animate = {},
         gh = {
             -- your gh configuration comes here
             -- or leave it empty to use the default settings
@@ -61,7 +62,7 @@ return {
                         { win = "input", height = 1, border = "bottom" },
                         {
                             box = "horizontal",
-                            { win = "list", border = "none" },
+                            { win = "list",    border = "none" },
                             { win = "preview", title = "{preview}", width = 0.5, border = "left" },
                         },
                     },
@@ -77,9 +78,9 @@ return {
                         border = "none",
                         title = "{title} {live} {flags}",
                         title_pos = "center",
-                        { win = "input", height = 1, border = "bottom" },
-                        { win = "list", border = "none" },
-                        { win = "preview", title = "{preview}", height = 0.4, border = "top" },
+                        { win = "input",   height = 1,          border = "bottom" },
+                        { win = "list",    border = "none" },
+                        { win = "preview", title = "{preview}", height = 0.4,     border = "top" },
                     },
                 },
                 horizontal = {
@@ -93,8 +94,8 @@ return {
                             box = "vertical",
                             border = "none",
                             title = "{title} {live} {flags}",
-                            { win = "input", height = 1, border = "bottom" },
-                            { win = "list", border = "none" },
+                            { win = "input", height = 1,     border = "bottom" },
+                            { win = "list",  border = "none" },
                         },
                         { win = "preview", title = "{preview}", border = "none", width = 0.5 },
                     },
@@ -205,7 +206,7 @@ return {
             end,
             desc = "Git Status Files",
         },
-        { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
+        { "<leader>/", function() Snacks.picker.grep() end,          desc = "Grep" },
         {
             "<leader>:",
             function()
@@ -254,25 +255,25 @@ return {
             nowait = true,
             desc = "References",
         },
-        { "gi", function() Snacks.gh.issue() end, desc = "Git Issues" },
-        { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
-        { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
-        { "<leader>.", function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
+        { "gi",        function() Snacks.gh.issue() end,                    desc = "Git Issues" },
+        { "gI",        function() Snacks.picker.lsp_implementations() end,  desc = "Goto Implementation" },
+        { "gy",        function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
+        { "<leader>.", function() Snacks.scratch() end,                     desc = "Toggle Scratch Buffer" },
         {
             "<leader>S",
             function() Snacks.scratch.select() end,
             desc = "Select Scratch Buffer",
         },
-        { "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notification History" },
+        { "<leader>n",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
         {
             "B",
             function() Snacks.git.blame_line() end,
             desc = "Git Blame",
         },
-        { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
-        { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
-        { "<c-/>", function() Snacks.terminal() end, desc = "Toggle Terminal" },
-        { "<c-_>", function() Snacks.terminal() end, desc = "which_key_ignore" },
+        { "<leader>gg", function() Snacks.lazygit() end,               desc = "Lazygit" },
+        { "<leader>un", function() Snacks.notifier.hide() end,         desc = "Dismiss All Notifications" },
+        { "<c-/>",      function() Snacks.terminal() end,              desc = "Toggle Terminal" },
+        { "<c-_>",      function() Snacks.terminal() end,              desc = "which_key_ignore" },
         {
             "]]",
             function() Snacks.words.jump(vim.v.count1) end,
