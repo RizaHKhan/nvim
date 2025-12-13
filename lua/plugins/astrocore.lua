@@ -94,6 +94,7 @@ return {
                 ["F"] = { cmd = ":'<,'>CodeCompanion /fix<cr>", desc = "Fix Code" },
                 ["T"] = { cmd = ":'<,'>CodeCompanion /tests<cr>", desc = "Create Tests" },
                 ["+"] = { cmd = function() require("opencode").prompt "@this" end, desc = "Add to Opencode" },
+                ["="] = { cmd = function() require("opencode").select() end, desc = "Opencode Select" },
             },
         },
     },
