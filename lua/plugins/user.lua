@@ -14,7 +14,7 @@ return {
     {
         "L3MON4D3/LuaSnip",
         config = function(plugin, opts)
-            require "astronvim.plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
+            require "astronvim.plugins.configs.luasnip" (plugin, opts) -- include the default astronvim config that calls the setup call
             -- add more custom luasnip configuration such as filetype extend or custom snippets
             local luasnip = require "luasnip"
             luasnip.filetype_extend("javascript", { "javascriptreact" })
@@ -24,7 +24,7 @@ return {
     {
         "windwp/nvim-autopairs",
         config = function(plugin, opts)
-            require "astronvim.plugins.configs.nvim-autopairs"(plugin, opts) -- include the default astronvim config that calls the setup call
+            require "astronvim.plugins.configs.nvim-autopairs" (plugin, opts) -- include the default astronvim config that calls the setup call
             -- add more custom autopairs configuration such as custom rules
             local npairs = require "nvim-autopairs"
             local Rule = require "nvim-autopairs.rule"
@@ -32,21 +32,21 @@ return {
             npairs.add_rules(
                 {
                     Rule("$", "$", { "tex", "latex" })
-                        -- don't add a pair if the next character is %
+                    -- don't add a pair if the next character is %
                         :with_pair(
                             cond.not_after_regex "%%"
                         )
-                        -- don't add a pair if  the previous character is xxx
+                    -- don't add a pair if  the previous character is xxx
                         :with_pair(
                             cond.not_before_regex("xxx", 3)
                         )
-                        -- don't move right when repeat character
+                    -- don't move right when repeat character
                         :with_move(cond.none())
-                        -- don't delete if the next character is xx
+                    -- don't delete if the next character is xx
                         :with_del(
                             cond.not_after_regex "xx"
                         )
-                        -- disable adding a newline when you press <cr>
+                    -- disable adding a newline when you press <cr>
                         :with_cr(cond.none()),
                 },
                 -- disable for .vim files, but it work for another filetypes
@@ -71,8 +71,8 @@ return {
     },
     {
         "okuuva/auto-save.nvim",
-        version = "^1.0.0", -- see https://devhints.io/semver, alternatively use '*' to use the latest tagged release
-        cmd = "ASToggle", -- optional for lazy loading on command
+        version = "^1.0.0",                       -- see https://devhints.io/semver, alternatively use '*' to use the latest tagged release
+        cmd = "ASToggle",                         -- optional for lazy loading on command
         event = { "InsertLeave", "TextChanged" }, -- optional for lazy loading on trigger events
         opts = {
             -- your config goes here
@@ -93,9 +93,9 @@ return {
                 extensions = {
                     copilotchat = {
                         enabled = true,
-                        convert_tools_to_functions = true, -- Convert MCP tools to CopilotChat functions
+                        convert_tools_to_functions = true,     -- Convert MCP tools to CopilotChat functions
                         convert_resources_to_functions = true, -- Convert MCP resources to CopilotChat functions
-                        add_mcp_prefix = false, -- Add "mcp_" prefix to function names
+                        add_mcp_prefix = false,                -- Add "mcp_" prefix to function names
                     },
                 },
             }
@@ -113,7 +113,8 @@ return {
         ft = { "http", "rest" },
         opts = {
             global_keymaps = true,
-            global_keymaps_prefix = "<leader>R",
+            global_keymaps_prefix = "<leader>r",
+            kulala_keymaps_prefix = "",
             kulala_keymaps = {
                 ["Show verbose"] = false,
                 ["Show headers and body"] = false,
@@ -166,11 +167,11 @@ return {
         opts = {},
         -- stylua: ignore
         keys = {
-            { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-            { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-            { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-            { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-            { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+            { "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
+            { "S",     mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
+            { "r",     mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
+            { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+            { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
         },
     },
     {
