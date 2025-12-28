@@ -37,6 +37,9 @@ return {
                 status.component.git_diff {
                     padding = { left = 1 },
                     surround = { separator = "none", color = { bg = "NONE" } },
+                    added = { hl = { fg = "#00FF00" } },
+                    changed = { hl = { fg = "#FF8C00" } },
+                    removed = { hl = { fg = "#FF0000" } },
                 },
                 status.component.fill(),
                 status.component.lsp {
