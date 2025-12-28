@@ -26,6 +26,18 @@ return {
             timeout = 3000,
         },
         picker = {
+            ui_select = false,  -- Disable Snacks ui_select, use default or telescope
+            focus = "input",  -- Focus input window by default
+            win = {
+                input = {
+                    keys = {
+                        -- Ensure insert mode is active in input windows
+                        ["<Esc>"] = { "close", mode = { "n", "i" } },
+                        -- Remap 'b' in normal mode to insert 'b' character
+                        ["b"] = { function() vim.api.nvim_feedkeys('ib', 'n', false) end, mode = "n" },
+                    },
+                },
+            },
             transform = function(item)
                 if not item.file then return item end
                 if item.file:match "lazyvim/lua/config/keymaps%.lua" then
@@ -156,7 +168,6 @@ return {
             "<leader><space>",
             function()
                 Snacks.picker.smart {
-                    on_show = function() vim.cmd.stopinsert() end,
                     multi = { "files" },
                     format = "file",
                     matcher = {
@@ -173,7 +184,6 @@ return {
             "H",
             function()
                 Snacks.picker.buffers {
-                    on_show = function() vim.cmd.stopinsert() end,
                     finder = "buffers",
                     format = "buffer",
                     hidden = false,
@@ -201,7 +211,6 @@ return {
             "K",
             function()
                 Snacks.picker.git_status {
-                    on_show = function() vim.cmd.stopinsert() end,
                 }
             end,
             desc = "Git Status Files",
@@ -211,7 +220,6 @@ return {
             "<leader>:",
             function()
                 Snacks.picker.command_history {
-                    on_show = function() vim.cmd.stopinsert() end,
                     preview = "none",
                     formatters = { text = { ft = "vim" } },
                     layout = {
@@ -235,7 +243,6 @@ return {
             "<leader>D",
             function()
                 Snacks.picker.diagnostics_buffer {
-                    on_show = function() vim.cmd.stopinsert() end,
                 }
             end,
             desc = "Goto Definition",
