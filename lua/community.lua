@@ -25,7 +25,6 @@ return {
     { import = "astrocommunity.pack.html-css" },
     { import = "astrocommunity.pack.lua" },
     { import = "astrocommunity.pack.nginx" },
-    -- { import = "astrocommunity.pack.laravel" },
     { import = "astrocommunity.pack.php" },
     { import = "astrocommunity.pack.python" },
     { import = "astrocommunity.pack.sql" },

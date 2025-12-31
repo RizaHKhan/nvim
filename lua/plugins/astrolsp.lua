@@ -104,6 +104,7 @@ return {
                     desc = "Declaration of current symbol",
                     cond = "textDocument/declaration",
                 },
+                ["<Leader>lr"] = false, -- disable LSP rename to allow Laravel routes keybinding
                 ["<Leader>uY"] = {
                     function() require("astrolsp.toggles").buffer_semantic_tokens() end,
                     desc = "Toggle LSP semantic highlight (buffer)",
