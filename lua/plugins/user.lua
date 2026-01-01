@@ -142,9 +142,12 @@ return {
     {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-        build = "cd app && yarn install",
+        build = "cd app && npm install",
         init = function() vim.g.mkdp_filetypes = { "markdown" } end,
         ft = { "markdown" },
+        keys = {
+            { "<leader>M", mode = "n", ":MarkdownPreview<cr>", desc = "Markdown Preview" },
+        },
     },
     {
         "s1n7ax/nvim-window-picker",
