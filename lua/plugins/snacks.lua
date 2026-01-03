@@ -26,18 +26,6 @@ return {
             timeout = 3000,
         },
         picker = {
-            ui_select = false,  -- Disable Snacks ui_select, use default or telescope
-            focus = "input",  -- Focus input window by default
-            win = {
-                input = {
-                    keys = {
-                        -- Ensure insert mode is active in input windows
-                        ["<Esc>"] = { "close", mode = { "n", "i" } },
-                        -- Remap 'b' in normal mode to insert 'b' character
-                        ["b"] = { function() vim.api.nvim_feedkeys('ib', 'n', false) end, mode = "n" },
-                    },
-                },
-            },
             transform = function(item)
                 if not item.file then return item end
                 if item.file:match "lazyvim/lua/config/keymaps%.lua" then

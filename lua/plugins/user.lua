@@ -14,7 +14,7 @@ return {
     {
         "L3MON4D3/LuaSnip",
         config = function(plugin, opts)
-            require "astronvim.plugins.configs.luasnip" (plugin, opts) -- include the default astronvim config that calls the setup call
+            require "astronvim.plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
             -- add more custom luasnip configuration such as filetype extend or custom snippets
             local luasnip = require "luasnip"
             luasnip.filetype_extend("javascript", { "javascriptreact" })
@@ -24,7 +24,7 @@ return {
     {
         "windwp/nvim-autopairs",
         config = function(plugin, opts)
-            require "astronvim.plugins.configs.nvim-autopairs" (plugin, opts) -- include the default astronvim config that calls the setup call
+            require "astronvim.plugins.configs.nvim-autopairs"(plugin, opts) -- include the default astronvim config that calls the setup call
             -- add more custom autopairs configuration such as custom rules
             local npairs = require "nvim-autopairs"
             local Rule = require "nvim-autopairs.rule"
@@ -32,21 +32,21 @@ return {
             npairs.add_rules(
                 {
                     Rule("$", "$", { "tex", "latex" })
-                    -- don't add a pair if the next character is %
+                        -- don't add a pair if the next character is %
                         :with_pair(
                             cond.not_after_regex "%%"
                         )
-                    -- don't add a pair if  the previous character is xxx
+                        -- don't add a pair if  the previous character is xxx
                         :with_pair(
                             cond.not_before_regex("xxx", 3)
                         )
-                    -- don't move right when repeat character
+                        -- don't move right when repeat character
                         :with_move(cond.none())
-                    -- don't delete if the next character is xx
+                        -- don't delete if the next character is xx
                         :with_del(
                             cond.not_after_regex "xx"
                         )
-                    -- disable adding a newline when you press <cr>
+                        -- disable adding a newline when you press <cr>
                         :with_cr(cond.none()),
                 },
                 -- disable for .vim files, but it work for another filetypes
@@ -71,8 +71,8 @@ return {
     },
     {
         "okuuva/auto-save.nvim",
-        version = "^1.0.0",                       -- see https://devhints.io/semver, alternatively use '*' to use the latest tagged release
-        cmd = "ASToggle",                         -- optional for lazy loading on command
+        version = "^1.0.0", -- see https://devhints.io/semver, alternatively use '*' to use the latest tagged release
+        cmd = "ASToggle", -- optional for lazy loading on command
         event = { "InsertLeave", "TextChanged" }, -- optional for lazy loading on trigger events
         opts = {
             -- your config goes here
@@ -93,9 +93,9 @@ return {
                 extensions = {
                     copilotchat = {
                         enabled = true,
-                        convert_tools_to_functions = true,     -- Convert MCP tools to CopilotChat functions
+                        convert_tools_to_functions = true, -- Convert MCP tools to CopilotChat functions
                         convert_resources_to_functions = true, -- Convert MCP resources to CopilotChat functions
-                        add_mcp_prefix = false,                -- Add "mcp_" prefix to function names
+                        add_mcp_prefix = false, -- Add "mcp_" prefix to function names
                     },
                 },
             }
@@ -175,10 +175,22 @@ return {
         config = function() require("yank-path").setup() end,
     },
     {
-        "RizaHKhan/filter.nvim",
+        "cenk1cenk2/jq.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+            "grapp-dev/nui-components.nvim",
         },
-        config = function() require("filter").setup() end,
+        opts = {
+            ui = {
+                border = "rounded",
+                keymap = {
+                    focus_left = "<C-h>",
+                    focus_right = "<C-l>",
+                    focus_up = "<C-k>",
+                    focus_down = "<C-j>",
+                },
+            },
+        },
     },
 }
