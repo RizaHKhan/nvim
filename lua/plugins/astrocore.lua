@@ -7,8 +7,6 @@
 return {
     "AstroNvim/astrocore",
     ---@type AstroCoreOpts
-    version = false,
-    branch = "v3",
     opts = {
         -- Configure core features of AstroNvim
         features = {
@@ -86,6 +84,23 @@ return {
                         end
                     end,
                     desc = "Wrap word in HTML tag, place cursor inside, and enter insert mode",
+                },
+                ["<leader>j"] = {
+                    cmd = function()
+                        require("jq").run {
+                            toggle = true,
+                            commands = {
+                                {
+                                    command = "yq",
+                                    filetype = "json",
+                                    arguments = "-r",
+                                },
+                            },
+                            arguments = "",
+                            query = "."
+                        }
+                    end,
+                    desc = "yq",
                 },
             },
             v = {
