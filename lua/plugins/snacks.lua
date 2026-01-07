@@ -199,6 +199,7 @@ return {
             "K",
             function()
                 Snacks.picker.git_status {
+                    preview = false, -- Disable preview sidebar entirely
                 }
             end,
             desc = "Git Status Files",
