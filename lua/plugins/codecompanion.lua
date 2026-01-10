@@ -9,6 +9,20 @@ return {
         "dyamon/codecompanion-filewise.nvim",
     },
     opts = {
+        adapters = {
+            acp = {
+                gemini_cli = function()
+                    return require("codecompanion.adapters").extend("gemini_cli", {
+                        defaults = {
+                            auth_method = "gemini-api-key", -- "oauth-personal"|"gemini-api-key"|"vertex-ai"
+                        },
+                        env = {
+                            GEMINI_API_KEY = "cmd:op read op://Personal/Gemini/credential --no-newline",
+                        },
+                    })
+                end,
+            },
+        },
         extensions = {
             mcphub = {
                 callback = "mcphub.extensions.codecompanion",
