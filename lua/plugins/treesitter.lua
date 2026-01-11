@@ -1,4 +1,6 @@
--- Customize Treesitter
+-- NOTE: Neovim 0.12-dev has incompatible treesitter queries for PHP.
+-- If symbol search breaks after :Lazy update, run:
+-- rm ~/.local/share/nvim/lazy/nvim-treesitter/queries/php_only/highlights.scm
 
 ---@type LazySpec
 return {
