@@ -12,4 +12,13 @@ vim.filetype.add {
 vim.opt.iskeyword:append { "-", "$" }
 vim.opt.conceallevel = 2
 vim.opt.swapfile = false
-vim.keymap.set('x', 'p', '"_dP', { silent = true })
+vim.keymap.set("x", "p", '"_dP', { silent = true })
+
+function _G.NumberedTabline()
+    local s = ""
+    for i = 1, vim.fn.tabpagenr "$" do
+        local hl = i == vim.fn.tabpagenr() and "%#TabLineSel#" or "%#TabLine#"
+        s = s .. hl .. " " .. i .. " "
+    end
+    return s .. "%#TabLineFill#"
+end
