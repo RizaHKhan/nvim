@@ -24,7 +24,7 @@ return {
             {
                 hl = { bg = "#2D353B" },
                 status.component.file_info {
-                    filename = { fallback = "Empty" },
+                    filename = { fallback = "Empty", modify = ":." },
                     filetype = false,
                     file_read_only = false,
                     padding = { right = 2 },
