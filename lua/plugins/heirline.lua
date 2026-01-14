@@ -32,6 +32,7 @@ return {
                 },
                 status.component.git_branch {
                     git_branch = { padding = { left = 2, right = 2 } },
+                    hl = { fg = "#7DCFFF", bold = true },
                     surround = { separator = "none", color = { bg = "NONE" } },
                 },
                 status.component.git_diff {
