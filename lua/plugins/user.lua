@@ -205,6 +205,8 @@ return {
             },
             keymaps = {
                 ["<c-c>"] = false,
+                ["<C-l>"] = false,
+                ["<C-h>"] = false,
                 ["g."] = "actions.toggle_hidden",
                 ["_g"] = function()
                     local git_path = vim.fn.finddir(".git", ".;")
