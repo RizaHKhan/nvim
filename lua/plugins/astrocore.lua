@@ -51,12 +51,7 @@ return {
                 -- navigate buffer tabs
                 ["tt"] = { cmd = ":tabnew <cr>", desc = "New tab" },
                 ["tc"] = { cmd = ":tabclose <cr>", desc = "Close tab" },
-                -- Diffview
                 ["D"] = { cmd = ":Dbee<cr>", desc = "Toggle Dbee" },
-                -- ["<leader>do"] = { cmd = ":DiffviewOpen<cr>", desc = "Diffview Open" },
-                -- ["<leader>df"] = { cmd = ":DiffviewFileHistory %<cr>", desc = "Diffview File History" },
-                -- ["<leader>dc"] = { cmd = ":DiffviewClose<cr>", desc = "Diffview Close" },
-                ["L"] = { cmd = ":CodeCompanionChat Toggle<cr>", desc = "CodeCompanionChat Toggle" },
                 [";d"] = { cmd = ":DiffviewOpen<cr>", desc = "Open Diffview" },
                 [";;"] = { cmd = ":DiffviewClose<cr>", desc = "Close Diffview" },
                 [";h"] = { cmd = "<cmd>DiffviewFileHistory --follow %<cr>", desc = "Close Diffview" },
