@@ -4,7 +4,7 @@ return {
         opts.winbar = nil
         local status = require "astroui.status"
         opts.statusline = {
-            condition = function() return vim.bo.filetype ~= "oil" end,
+            condition = function() return vim.bo.buftype == "" and vim.bo.filetype ~= "oil" and vim.bo.filetype ~= "grug-far" end,
             hl = { fg = "fg", bg = "bg" },
             status.component.mode {
                 mode_text = {
