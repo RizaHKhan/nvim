@@ -8,6 +8,17 @@ return {
         "ravitemer/codecompanion-history.nvim", -- Save and load conversation history
         "dyamon/codecompanion-filewise.nvim",
     },
+    init = function()
+        vim.keymap.set({ "n", "v" }, "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
+        vim.keymap.set(
+            { "n", "v" },
+            "L",
+            "<cmd>CodeCompanionChat Toggle<cr>",
+            { noremap = true, silent = true }
+        )
+        vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
+    end,
+
     opts = {
         extensions = {
             mcphub = {
@@ -21,10 +32,7 @@ return {
         },
         strategies = {
             chat = {
-                adapter = {
-                    name = "copilot",
-                    model = "claude-sonnet-4.5",
-                },
+                adapter = "opencode",
             },
         },
         inline = {
