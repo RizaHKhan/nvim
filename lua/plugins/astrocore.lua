@@ -52,6 +52,7 @@ return {
                 ["tt"] = { cmd = ":tabnew <cr>", desc = "New tab" },
                 ["tc"] = { cmd = ":tabclose <cr>", desc = "Close tab" },
                 ["D"] = { cmd = ":Dbee<cr>", desc = "Toggle Dbee" },
+                ["L"] = { cmd = ":CodeCompanionChat Toggle<cr>", desc = "CodeCompanionChat Toggle" },
                 [";d"] = { cmd = ":DiffviewOpen<cr>", desc = "Open Diffview" },
                 [";;"] = { cmd = ":DiffviewClose<cr>", desc = "Close Diffview" },
                 [";h"] = { cmd = "<cmd>DiffviewFileHistory --follow %<cr>", desc = "Close Diffview" },
@@ -101,6 +102,10 @@ return {
                 },
             },
             v = {
+                ["A"] = { cmd = ":CodeCompanionActions<cr>", desc = "Code Companion Actions" },
+                ["E"] = { cmd = ":'<,'>CodeCompanion /explain<cr>", desc = "Explain Code" },
+                ["F"] = { cmd = ":'<,'>CodeCompanion /fix<cr>", desc = "Fix Code" },
+                ["T"] = { cmd = ":'<,'>CodeCompanion /tests<cr>", desc = "Create Tests" },
                 ["+"] = { cmd = function() require("opencode").prompt "@this" end, desc = "Add to Opencode" },
                 ["="] = { cmd = function() require("opencode").select() end, desc = "Opencode Select" },
             },
