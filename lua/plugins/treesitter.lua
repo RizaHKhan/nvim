@@ -26,5 +26,8 @@ return {
                 node_decremental = "<Backspace>",
             },
         },
+        indent = {
+            enable = true,
+        },
     },
 }
