@@ -90,7 +90,7 @@ return {
                 pathMappings = {
                     ["/var/www/html"] = "${workspaceFolder}",
                 },
-                hostname = "localhost",
+                hostname = "0.0.0.0",
             },
             {
                 type = "php",
