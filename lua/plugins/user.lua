@@ -293,7 +293,7 @@ return {
                         cb()
                     end,
                     {
-                        prompt = "Laravel Routes> ",
+                        prompt = "Search Routes: ",
                         previewer = false,
                         actions = {
                             ["default"] = function(selected)
