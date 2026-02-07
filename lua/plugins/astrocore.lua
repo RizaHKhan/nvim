@@ -99,6 +99,7 @@ return {
                     end,
                     desc = "yq",
                 },
+                ["<leader>fR"] = { cmd = ":LaravelRoutes<cr>", desc = "Laravel Routes" },
             },
             v = {
                 ["+"] = { cmd = function() require("opencode").prompt "@this" end, desc = "Add to Opencode" },
