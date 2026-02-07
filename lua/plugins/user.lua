@@ -267,13 +267,7 @@ return {
                         local name = route.name or ""
                         local action = route.action or ""
 
-                        local display = string.format(
-                            "%-8s %-40s %-30s %s",
-                            method,
-                            uri,
-                            name,
-                            action
-                        )
+                        local display = string.format("%-8s %-40s %-30s %s", method, uri, name, action)
 
                         table.insert(entries, {
                             display = display,
@@ -285,57 +279,54 @@ return {
                     end
                 end
 
-                fzf.fzf_exec(
-                    function(cb)
-                        for _, entry in ipairs(entries) do
-                            cb(entry.display, function() return entry end)
-                        end
-                        cb()
-                    end,
-                    {
-                        prompt = "Search Routes: ",
-                        previewer = false,
-                        actions = {
-                            ["default"] = function(selected)
-                                if not selected or #selected == 0 then return end
+                fzf.fzf_exec(function(cb)
+                    for _, entry in ipairs(entries) do
+                        cb(entry.display, function() return entry end)
+                    end
+                    cb()
+                end, {
+                    prompt = "Search Routes: ",
+                    previewer = false,
+                    actions = {
+                        ["default"] = function(selected)
+                            if not selected or #selected == 0 then return end
 
-                                local entry = entries[1]
-                                for _, e in ipairs(entries) do
-                                    if e.display == selected[1] then
-                                        entry = e
-                                        break
-                                    end
+                            local entry = entries[1]
+                            for _, e in ipairs(entries) do
+                                if e.display == selected[1] then
+                                    entry = e
+                                    break
                                 end
+                            end
 
-                                local action = entry.action
-                                local controller, method = action:match "(.+)@(.+)"
+                            local action = entry.action
+                            local controller, method = action:match "(.+)@(.+)"
 
-                                if not controller or not method then
-                                    vim.notify("Could not parse controller@method from: " .. action, vim.log.levels.WARN)
-                                    return
+                            if not controller or not method then
+                                vim.notify("Could not parse controller@method from: " .. action, vim.log.levels.WARN)
+                                return
+                            end
+
+                            local class_path = controller:gsub("\\", "/"):gsub("^App/Http/Controllers/", "")
+                            local file_path = "app/Http/Controllers/" .. class_path .. ".php"
+
+                            if vim.fn.filereadable(file_path) == 0 then
+                                vim.notify("File not found: " .. file_path, vim.log.levels.ERROR)
+                                return
+                            end
+
+                            vim.cmd("edit " .. file_path)
+
+                            vim.defer_fn(function()
+                                local pattern = "function\\s\\+" .. method .. "\\s*("
+                                local found = vim.fn.search(pattern, "w")
+                                if found == 0 then
+                                    vim.notify("Method " .. method .. " not found in file", vim.log.levels.WARN)
                                 end
-
-                                local class_path = controller:gsub("\\", "/"):gsub("^App/Http/Controllers/", "")
-                                local file_path = "app/Http/Controllers/" .. class_path .. ".php"
-
-                                if vim.fn.filereadable(file_path) == 0 then
-                                    vim.notify("File not found: " .. file_path, vim.log.levels.ERROR)
-                                    return
-                                end
-
-                                vim.cmd("edit " .. file_path)
-
-                                vim.defer_fn(function()
-                                    local pattern = "function\\s\\+" .. method .. "\\s*("
-                                    local found = vim.fn.search(pattern, "w")
-                                    if found == 0 then
-                                        vim.notify("Method " .. method .. " not found in file", vim.log.levels.WARN)
-                                    end
-                                end, 50)
-                            end,
-                        },
-                    }
-                )
+                            end, 50)
+                        end,
+                    },
+                })
             end
 
             vim.api.nvim_create_user_command("LaravelRoutes", laravel_routes, {})
