@@ -4,8 +4,8 @@ return {
     dependencies = {
         "nvim-lua/plenary.nvim",
         "nvim-treesitter/nvim-treesitter",
-        "j-hui/fidget.nvim", -- Display status
-        "ravitemer/codecompanion-history.nvim", -- Save and load conversation history
+        "j-hui/fidget.nvim",
+        "ravitemer/codecompanion-history.nvim",
         "dyamon/codecompanion-filewise.nvim",
     },
     opts = {
@@ -21,7 +21,7 @@ return {
         },
         strategies = {
             chat = {
-                adapter = "opencode",
+                adapter = "copilot",
             },
         },
         inline = {
