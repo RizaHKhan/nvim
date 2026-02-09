@@ -19,6 +19,10 @@ return {
         },
         incremental_selection = {
             enable = true,
+            disable = function(_, bufnr)
+                local filetype = vim.bo[bufnr].filetype
+                return filetype and filetype:match("%.kulala_ui$") ~= nil
+            end,
             keymaps = {
                 init_selection = "<Enter>",
                 node_incremental = "<Enter>",
