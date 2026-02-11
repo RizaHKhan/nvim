@@ -75,11 +75,12 @@ return {
             {
                 type = "php",
                 request = "launch",
-                name = "Listen for xdebug (Docker)",
+                name = "Listen for Xdebug (Docker)",
                 port = 9003,
                 log = true,
+                hostname = "0.0.0.0",
                 pathMappings = {
-                    ["/app"] = "${workspaceFolder}",
+                    ["/var/www/html"] = "${workspaceFolder}",
                 },
             },
             {

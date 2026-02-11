@@ -21,7 +21,7 @@ return {
             enable = true,
             disable = function(_, bufnr)
                 local filetype = vim.bo[bufnr].filetype
-                return filetype and filetype:match("%.kulala_ui$") ~= nil
+                return filetype and (filetype:match("%.kulala_ui$") ~= nil or filetype == "codecompanion")
             end,
             keymaps = {
                 init_selection = "<Enter>",
