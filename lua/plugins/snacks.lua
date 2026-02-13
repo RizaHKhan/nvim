@@ -198,6 +198,7 @@ return {
             desc = "Git Status Files",
         },
         { "<leader>/", function() Snacks.picker.grep() end,          desc = "Grep" },
+        { "<leader>fw", function() Snacks.picker.grep_word() end,        desc = "Current word search", mode = { "n", "x" } },
         {
             "<leader>:",
             function()
