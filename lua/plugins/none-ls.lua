@@ -9,9 +9,17 @@ return {
 
         opts.sources = opts.sources or {}
 
-        if vim.fn.executable "prettier" == 1 then table.insert(opts.sources, null_ls.builtins.formatting.prettier) end
+        if vim.fn.executable "prettier" == 1 then
+            table.insert(opts.sources, null_ls.builtins.formatting.prettier.with {
+                runtime_condition = function(params) return params.bufname ~= nil and params.bufname ~= "" end,
+            })
+        end
 
-        if vim.fn.executable "biome" == 1 then table.insert(opts.sources, null_ls.builtins.formatting.biome) end
+        if vim.fn.executable "biome" == 1 then
+            table.insert(opts.sources, null_ls.builtins.formatting.biome.with {
+                runtime_condition = function(params) return params.bufname ~= nil and params.bufname ~= "" end,
+            })
+        end
 
         return opts
     end,
