@@ -177,7 +177,8 @@ return {
     {
         "ywpkwon/yank-path.nvim",
         config = function() require("yank-path").setup({
-            default_mapping = false
+            default_mapping = false,
+            use_oil = true
         }) end,
     },
     {
