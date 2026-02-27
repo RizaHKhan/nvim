@@ -176,7 +176,9 @@ return {
     },
     {
         "ywpkwon/yank-path.nvim",
-        config = function() require("yank-path").setup() end,
+        config = function() require("yank-path").setup({
+            default_mapping = false
+        }) end,
     },
     {
         "cenk1cenk2/jq.nvim",
