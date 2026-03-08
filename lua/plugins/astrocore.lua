@@ -99,7 +99,6 @@ return {
                     end,
                     desc = "yq",
                 },
-                ["<leader>lr"] = { cmd = ":LaravelRoutes<cr>", desc = "Laravel Routes" },
                 ["<leader>y"] = { cmd = ":YankPath<cr>", desc = "Yank path" },
             },
             v = {
