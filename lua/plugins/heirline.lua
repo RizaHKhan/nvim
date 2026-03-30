@@ -41,38 +41,6 @@ return {
                  changed = { hl = { fg = "#D4A574" } },
                  removed = { hl = { fg = "#C94F4F" } },
              },
-             status.component.builder {
-                 {
-                     provider = function()
-                         local file = vim.fn.expand "%:p"
-                         if file == "" or not vim.fn.filereadable(file) then return "" end
-                         local stat = vim.fn.system("stat -c '%U' " .. vim.fn.shellescape(file)):gsub("\n", "")
-                         return stat ~= "" and stat or ""
-                     end,
-                 },
-                 hl = { fg = "#FFFFFF", bg = "NONE" },
-                 surround = { separator = "none" },
-                 padding = { left = 1, right = 0 },
-             },
-             status.component.builder {
-                 { provider = ":" },
-                 hl = { fg = "#FFFFFF", bg = "NONE" },
-                 surround = { separator = "none" },
-                 padding = { left = 0, right = 0 },
-             },
-             status.component.builder {
-                 {
-                     provider = function()
-                         local file = vim.fn.expand "%:p"
-                         if file == "" or not vim.fn.filereadable(file) then return "" end
-                         local stat = vim.fn.system("stat -c '%G' " .. vim.fn.shellescape(file)):gsub("\n", "")
-                         return stat ~= "" and stat or ""
-                     end,
-                 },
-                 hl = { fg = "#FFFFFF", bg = "NONE" },
-                 surround = { separator = "none" },
-                 padding = { left = 0, right = 1 },
-             },
              status.component.fill(),
              status.component.lsp {
                  surround = { separator = "none", color = { bg = "NONE" } },
