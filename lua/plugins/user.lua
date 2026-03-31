@@ -109,10 +109,7 @@ return {
             global_keymaps = true,
             global_keymaps_prefix = "<leader>r",
             kulala_keymaps_prefix = "",
-            kulala_keymaps = {
-                ["Show verbose"] = false,
-                ["Show headers and body"] = false,
-            },
+            kulala_keymaps = {},
             contenttypes = {
                 -- ["application/json"] = {
                 --     ft = "json",
@@ -133,7 +130,6 @@ return {
             ui = {
                 formatter = true,
                 max_response_size = 10000000,
-                default_winbar_panes = { "body", "script_output", "report", "help" },
             },
             debug = true,
         },
