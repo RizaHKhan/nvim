@@ -1,38 +1,16 @@
--- NOTE: Neovim 0.12-dev has incompatible treesitter queries for PHP.
--- If symbol search breaks after :Lazy update, run:
--- rm ~/.local/share/nvim/lazy/nvim-treesitter/queries/php_only/highlights.scm
-
----@type LazySpec
 return {
-    "nvim-treesitter/nvim-treesitter",
-    branch = "main",
-    build = ":TSUpdate",
+    "AstroNvim/astrocore",
+    ---@type AstroCoreOpts
     opts = {
-        ensure_installed = {
-            "lua",
-            "vim",
-            -- add more arguments for adding more treesitter parsers
-        },
-        ignore_install = { "php", "php_only" }, -- Prevent installation of parsers with broken queries
-        highlight = {
-            enable = true,
-            disable = { "php", "python" }, -- Disable highlighting for parsers with broken queries
-        },
-        incremental_selection = {
-            enable = true,
-            disable = function(_, bufnr)
-                local filetype = vim.bo[bufnr].filetype
-                return filetype and (filetype:match("%.kulala_ui$") ~= nil or filetype == "codecompanion")
-            end,
-            keymaps = {
-                init_selection = "<Enter>",
-                node_incremental = "<Enter>",
-                scope_incremental = false,
-                node_decremental = "<Backspace>",
+        treesitter = {
+            highlight = true, -- enable/disable treesitter based highlighting
+            indent = true, -- enable/disable treesitter based indentation
+            auto_install = true, -- enable/disable automatic installation of detected languages
+            ensure_installed = {
+                "lua",
+                "vim",
+                -- add more arguments for adding more treesitter parsers
             },
-        },
-        indent = {
-            enable = true,
         },
     },
 }
