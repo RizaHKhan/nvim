@@ -130,6 +130,15 @@ return {
             ui = {
                 formatter = true,
                 max_response_size = 10000000,
+                pickers = {
+                    snacks = {
+                        layout = function()
+                            local has_snacks, snacks_picker = pcall(require, "snacks.picker")
+                            return not has_snacks and {}
+                                or vim.tbl_deep_extend("force", snacks_picker.config.layout "horizontal", {})
+                        end,
+                    },
+                },
             },
             debug = true,
         },
@@ -281,8 +290,6 @@ return {
         ---@diagnostic disable: missing-fields
         opts = {},
         ---@diagnostic enable: missing-fields
-        config = function(_, opts)
-            require("fzf-lua").setup(opts)
-        end,
+        config = function(_, opts) require("fzf-lua").setup(opts) end,
     },
 }
