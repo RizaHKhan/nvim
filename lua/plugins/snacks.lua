@@ -59,7 +59,7 @@ return {
                         border = "top",
                         title = " {title} {live} {flags}",
                         title_pos = "left",
-                        { win = "input", height = 1, border = "bottom" },
+                        { win = "input", height = 1 },
                         {
                             box = "horizontal",
                             { win = "list", border = "none" },
@@ -94,7 +94,7 @@ return {
                             box = "vertical",
                             border = "none",
                             title = "{title} {live} {flags}",
-                            { win = "input", height = 1, border = "bottom" },
+                            { win = "input", height = 1 },
                             { win = "list", border = "none" },
                         },
                         { win = "preview", title = "{preview}", border = "none", width = 0.5 },
