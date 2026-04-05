@@ -18,11 +18,12 @@ return {
         highlights = {
             init = {
                 -- Normal = { bg = "#212830" },
-                NormalNC = { bg = "NONE" }, -- set the background of NormalNC to transparent
-                WinSeparator = { fg = "#606060" }, -- medium gray
-                -- NeoTreeNormal = { bg = "#151b23" }, -- set the background of NeoTreeNormal to match Normal
-                SignColumn = { bg = "NONE" }, -- set the background of SignColumn to match Normal
-                NeoTreeWinSeparator = { bg = "#232A2E", fg = "#232A2E" }, -- set the background of NeoTreeWinSeparator to match Normal
+                NormalNC = { bg = "NONE" },
+                WinSeparator = { fg = "#606060" },
+                SignColumn = { bg = "NONE" },
+                NeoTreeNormal = { bg = "NONE" },
+                NeoTreeNormalNC = { bg = "NONE" },
+                NeoTreeWinSeparator = { fg = "#606060", bg = "NONE" },
             }, -- this table overrides highlights in all themes
             astrodark = { -- a table of overrides/changes when applying the astrotheme theme
                 Normal = { bg = "#212830" },
