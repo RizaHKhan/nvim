@@ -82,25 +82,6 @@ return {
         "vhyrro/luarocks.nvim",
     },
     {
-        "ravitemer/mcphub.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
-        build = "npm install -g mcp-hub@latest", -- Installs `mcp-hub` node binary globally
-        config = function()
-            require("mcphub").setup {
-                extensions = {
-                    copilotchat = {
-                        enabled = true,
-                        convert_tools_to_functions = true, -- Convert MCP tools to CopilotChat functions
-                        convert_resources_to_functions = true, -- Convert MCP resources to CopilotChat functions
-                        add_mcp_prefix = false, -- Add "mcp_" prefix to function names
-                    },
-                },
-            }
-        end,
-    },
-    {
         "mistweaverco/kulala.nvim",
         branch = "develop",
         enabled = true,
@@ -186,26 +167,6 @@ return {
                 use_oil = true,
             }
         end,
-    },
-    {
-        "cenk1cenk2/jq.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "MunifTanjim/nui.nvim",
-            "grapp-dev/nui-components.nvim",
-        },
-        build = "git restore --source=HEAD :/",
-        opts = {
-            ui = {
-                border = "rounded",
-                keymap = {
-                    focus_left = "<C-h>",
-                    focus_right = "<C-l>",
-                    focus_up = "<C-k>",
-                    focus_down = "<C-j>",
-                },
-            },
-        },
     },
     {
         "stevearc/oil.nvim",

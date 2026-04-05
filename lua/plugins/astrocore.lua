@@ -58,7 +58,6 @@ return {
                 ["="] = { cmd = "<cmd>Oil<cr>", desc = "Oil" },
                 ["<leader>k"] = { cmd = function() vim.lsp.buf.hover() end, desc = "hover.nvim" },
                 ["<leader>dw"] = { cmd = ":DapViewWatch<cr>", desc = "Watch" },
-                ["M"] = { cmd = ":MCPHub<cr>", desc = "MCP Hub" },
                 ["<leader>so"] = { cmd = ":update<CR>:source<CR>", desc = "Source AstroNvim" },
                 [".."] = {
                     cmd = function()
