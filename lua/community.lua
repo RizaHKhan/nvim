@@ -26,4 +26,5 @@ return {
     { import = "astrocommunity.test.neotest" },
     { import = "astrocommunity.utility.lua-json5" },
     { import = "astrocommunity.utility.noice-nvim" },
+    { import = "astrocommunity.code-runner.toggletasks-nvim" },
 }
