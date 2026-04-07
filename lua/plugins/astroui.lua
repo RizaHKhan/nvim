@@ -19,6 +19,8 @@ return {
             init = {
                 -- Normal = { bg = "#212830" },
                 NormalNC = { bg = "NONE" },
+                NormalFloat = { bg = "NONE" },
+                FloatBorder = { bg = "NONE" },
                 WinSeparator = { fg = "#606060" },
                 SignColumn = { bg = "NONE" },
                 NeoTreeNormal = { bg = "NONE" },

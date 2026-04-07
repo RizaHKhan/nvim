@@ -56,7 +56,7 @@ return {
                 [";;"] = { cmd = ":DiffviewClose<cr>", desc = "Close Diffview" },
                 [";h"] = { cmd = "<cmd>DiffviewFileHistory --follow %<cr>", desc = "Close Diffview" },
                 ["="] = { cmd = "<cmd>Oil<cr>", desc = "Oil" },
-                ["<leader>k"] = { cmd = function() vim.lsp.buf.hover() end, desc = "hover.nvim" },
+                ["<leader>k"] = { cmd = function() require('hover').open() end, desc = "hover.nvim" },
                 ["<leader>dw"] = { cmd = ":DapViewWatch<cr>", desc = "Watch" },
                 ["<leader>so"] = { cmd = ":update<CR>:source<CR>", desc = "Source AstroNvim" },
                 [".."] = {
