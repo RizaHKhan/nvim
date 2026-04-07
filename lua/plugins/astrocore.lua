@@ -80,7 +80,6 @@ return {
                     end,
                     desc = "Wrap word in HTML tag, place cursor inside, and enter insert mode",
                 },
-                ["<leader>y"] = { cmd = ":YankPath<cr>", desc = "Yank path" },
             },
             v = {
                 ["+"] = { cmd = function() require("opencode").prompt "@this" end, desc = "Add to Opencode" },

@@ -170,15 +170,6 @@ return {
         },
     },
     {
-        "ywpkwon/yank-path.nvim",
-        config = function()
-            require("yank-path").setup {
-                default_mapping = false,
-                use_oil = true,
-            }
-        end,
-    },
-    {
         "stevearc/oil.nvim",
         event = "VeryLazy",
         opts = {
