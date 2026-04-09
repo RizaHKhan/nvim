@@ -52,13 +52,13 @@ return {
                 ["tt"] = { cmd = ":tabnew <cr>", desc = "New tab" },
                 ["tc"] = { cmd = ":tabclose <cr>", desc = "Close tab" },
                 ["D"] = { cmd = ":Dbee<cr>", desc = "Toggle Dbee" },
+                ["<leader>B"] = { cmd = ":AtlasBitbucket<cr>", desc = "Bitbucket" },
+                ["<leader>J"] = { cmd = ":AtlasJira<cr>", desc = "Jira" },
                 [";d"] = { cmd = ":DiffviewOpen<cr>", desc = "Open Diffview" },
                 [";;"] = { cmd = ":DiffviewClose<cr>", desc = "Close Diffview" },
                 [";h"] = { cmd = "<cmd>DiffviewFileHistory --follow %<cr>", desc = "Close Diffview" },
                 ["="] = { cmd = "<cmd>Oil<cr>", desc = "Oil" },
-                ["<leader>k"] = { cmd = function() require('hover').open() end, desc = "hover.nvim" },
                 ["<leader>dw"] = { cmd = ":DapViewWatch<cr>", desc = "Watch" },
-                ["<leader>so"] = { cmd = ":update<CR>:source<CR>", desc = "Source AstroNvim" },
                 [".."] = {
                     cmd = function()
                         local word = vim.fn.expand "<cWORD>"
