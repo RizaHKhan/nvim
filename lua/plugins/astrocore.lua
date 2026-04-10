@@ -54,9 +54,8 @@ return {
                 ["D"] = { cmd = ":Dbee<cr>", desc = "Toggle Dbee" },
                 ["<leader>B"] = { cmd = ":AtlasBitbucket<cr>", desc = "Bitbucket" },
                 ["<leader>J"] = { cmd = ":AtlasJira<cr>", desc = "Jira" },
-                [";d"] = { cmd = ":DiffviewOpen<cr>", desc = "Open Diffview" },
-                [";;"] = { cmd = ":DiffviewClose<cr>", desc = "Close Diffview" },
-                [";h"] = { cmd = "<cmd>DiffviewFileHistory --follow %<cr>", desc = "Close Diffview" },
+                [";d"] = { cmd = ":CodeDiff<cr>", desc = "Open Diffview" },
+                [";h"] = { cmd = ":CodeDiff history %<cr>", desc = "Close Diffview" },
                 ["="] = { cmd = "<cmd>Oil<cr>", desc = "Oil" },
                 ["<leader>dw"] = { cmd = ":DapViewWatch<cr>", desc = "Watch" },
                 [".."] = {

@@ -13,7 +13,6 @@ return {
     { import = "astrocommunity.diagnostics.trouble-nvim" },
     { import = "astrocommunity.editing-support.neogen" },
     { import = "astrocommunity.editing-support.treesj" },
-    { import = "astrocommunity.git.diffview-nvim" },
     { import = "astrocommunity.motion.mini-surround" },
     { import = "astrocommunity.quickfix.nvim-bqf" },
     { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },

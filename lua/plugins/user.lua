@@ -227,4 +227,8 @@ return {
         ---@diagnostic enable: missing-fields
         config = function(_, opts) require("fzf-lua").setup(opts) end,
     },
+    {
+        "esmuellert/codediff.nvim",
+        cmd = "CodeDiff",
+    },
 }
