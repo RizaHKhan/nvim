@@ -16,6 +16,8 @@ return {
                 "lua-language-server",
                 "laravel-ls",
                 "phpactor",
+                "vtsls",
+                "vue-language-server",
 
                 -- install formatters
                 "stylua",
