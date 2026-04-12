@@ -21,7 +21,7 @@ local function repositories(workspace, directory)
 end
 
 return {
-    "emrearmagan/atlas.nvim",
+    "RizaHKhan/atlas.nvim",
     config = function()
         require("atlas").setup {
             ---@type BitbucketConfig
@@ -40,6 +40,9 @@ return {
                             readme = "README.md", -- optional, defaults to README.md
                         },
                     },
+                },
+                diff = {
+                    open_cmd = "CodeDiff", -- or "DiffviewOpen"
                 },
                 custom_actions = {}, -- See Custom Actions below.
 
