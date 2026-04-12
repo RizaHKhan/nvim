@@ -47,6 +47,32 @@ return {
         ---@diagnostic disable: missing-fields
         config = {
             -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+            vtsls = {
+                filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
+                settings = {
+                    vtsls = {
+                        tsserver = {
+                            globalPlugins = {
+                                {
+                                    name = "@vue/typescript-plugin",
+                                    location = vim.fn.stdpath "data"
+                                        .. "/mason/packages/vue-language-server/node_modules/@vue/language-server/bin/typescript-plugin",
+                                    languages = { "vue" },
+                                    configNamespace = "typescript",
+                                    enableForWorkspaceTypeScriptVersions = true,
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            volar = {
+                init_options = {
+                    vue = {
+                        hybridMode = true,
+                    },
+                },
+            },
             phpactor = {
                 init_options = {
                     ["language_server.diagnostics_on_update"] = false,
@@ -66,6 +92,7 @@ return {
             -- function(server, opts) require("lspconfig")[server].setup(opts) end
 
             -- the key is the server that is being setup with `lspconfig`
+            tsserver = false,
             -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
             -- pyright = function(_, opts) require("lspconfig").pyright.setup(opts) end -- or a custom handler function can be passed
         },
