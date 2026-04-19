@@ -255,4 +255,5 @@ return {
             { "<leader>G", "<cmd>Neogit<cr>", desc = "Show Neogit UI" },
         },
     },
+    { "yochem/jq-playground.nvim" },
 }

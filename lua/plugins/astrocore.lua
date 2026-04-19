@@ -52,6 +52,7 @@ return {
                 ["tt"] = { cmd = ":tabnew <cr>", desc = "New tab" },
                 ["tc"] = { cmd = ":tabclose <cr>", desc = "Close tab" },
                 ["D"] = { cmd = ":Dbee<cr>", desc = "Toggle Dbee" },
+                ["<leader>jq"] = { cmd = ":JqPlayground<cr>", desc = "JQ" },
                 ["<leader>B"] = { cmd = ":AtlasBitbucket<cr>", desc = "Bitbucket" },
                 ["<leader>J"] = { cmd = ":AtlasJira<cr>", desc = "Jira" },
                 [";d"] = { cmd = ":CodeDiff<cr>", desc = "Open Diffview" },

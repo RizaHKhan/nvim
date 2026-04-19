@@ -195,6 +195,7 @@ return {
             function() Snacks.picker.git_status {} end,
             desc = "Git Status Files",
         },
+        { "<leader>lsw", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
         { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
         {
             "<leader>fw",
@@ -275,5 +276,6 @@ return {
             desc = "Prev Reference",
             mode = { "n", "t" },
         },
+        { "<leader>jq", function() Snacks.jq.open() end, desc = "jq/yq query" }
     },
 }

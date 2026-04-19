@@ -33,6 +33,9 @@ return {
         {
             "leoluz/nvim-dap-go",
         },
+        {
+            "jbyuki/one-small-step-for-vimkind",
+        },
     },
     config = function()
         local dap = require "dap"
