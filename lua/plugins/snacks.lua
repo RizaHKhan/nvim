@@ -164,7 +164,7 @@ return {
             desc = "Smart Find Files",
         },
         {
-            "H",
+            "B",
             function()
                 Snacks.picker.buffers {
                     finder = "buffers",
@@ -256,11 +256,6 @@ return {
             desc = "Select Scratch Buffer",
         },
         { "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notification History" },
-        {
-            "B",
-            function() Snacks.git.blame_line() end,
-            desc = "Git Blame",
-        },
         { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
         { "<c-/>", function() Snacks.terminal() end, desc = "Toggle Terminal" },
         { "<c-_>", function() Snacks.terminal() end, desc = "which_key_ignore" },
