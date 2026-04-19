@@ -190,11 +190,6 @@ return {
             end,
             desc = "Buffers",
         },
-        {
-            "K",
-            function() Snacks.picker.git_status {} end,
-            desc = "Git Status Files",
-        },
         { "<leader>lsw", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
         { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
         {
