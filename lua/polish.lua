@@ -4,9 +4,9 @@
 
 -- Set up custom filetypes
 vim.filetype.add {
-  extension = {
-    ["http"] = "http",
-  },
+    extension = {
+        ["http"] = "http",
+    },
 }
 
 vim.opt.iskeyword:append { "-", "$" }

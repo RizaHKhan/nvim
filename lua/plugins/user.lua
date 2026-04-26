@@ -231,29 +231,23 @@ return {
         "esmuellert/codediff.nvim",
         cmd = "CodeDiff",
     },
-    {
-        "NeogitOrg/neogit",
-        lazy = true,
-        dependencies = {
-            "nvim-lua/plenary.nvim", -- required
-
-            -- Only one of these is needed.
-            "sindrets/diffview.nvim", -- optional
-            "esmuellert/codediff.nvim", -- optional
-
-            -- For a custom log pager
-            "m00qek/baleia.nvim", -- optional
-
-            -- Only one of these is needed.
-            "nvim-telescope/telescope.nvim", -- optional
-            "ibhagwan/fzf-lua", -- optional
-            "nvim-mini/mini.pick", -- optional
-            "folke/snacks.nvim", -- optional
-        },
-        cmd = "Neogit",
-        keys = {
-            { "<leader>G", "<cmd>Neogit<cr>", desc = "Show Neogit UI" },
-        },
-    },
     { "yochem/jq-playground.nvim" },
+    {
+        "ywpkwon/yank-path.nvim",
+        config = function()
+            require("yank-path").setup {
+                default_mapping = false,
+                use_oil = true,
+            }
+        end,
+    },
+    -- {
+    --     "nvim-tree/nvim-tree.lua",
+    --     version = "*",
+    --     lazy = false,
+    --     dependencies = {
+    --         "nvim-tree/nvim-web-devicons",
+    --     },
+    --     config = function() require("nvim-tree").setup {} end,
+    -- },
 }

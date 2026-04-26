@@ -119,6 +119,7 @@ return {
             sources = {
                 explorer = {},
             },
+
         },
         quickfile = { enabled = true },
         scope = { enabled = true },
@@ -227,6 +228,16 @@ return {
             desc = "Goto Definition",
         },
         {
+            "R",
+            function() Snacks.picker.registers() end,
+            desc = "Registers",
+        },
+        {
+            "M",
+            function() Snacks.picker.marks() end,
+            desc = "Marks",
+        },
+        {
             "gD",
             function()
                 Snacks.picker.lsp_declarations {
@@ -266,6 +277,6 @@ return {
             desc = "Prev Reference",
             mode = { "n", "t" },
         },
-        { "<leader>jq", function() Snacks.jq.open() end, desc = "jq/yq query" }
+        { "<leader>jq", function() Snacks.jq.open() end, desc = "jq/yq query" },
     },
 }

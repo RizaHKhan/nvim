@@ -58,7 +58,7 @@ return {
                 [";d"] = { cmd = ":CodeDiff<cr>", desc = "Open Diffview" },
                 [";h"] = { cmd = ":CodeDiff history %<cr>", desc = "Close Diffview" },
                 ["="] = { cmd = "<cmd>Oil<cr>", desc = "Oil" },
-                ["<leader>dw"] = { cmd = ":DapViewWatch<cr>", desc = "Watch" },
+                ["<leader>y"] = { cmd = ":YankPath<cr>", desc = "Yank path" },
                 [".."] = {
                     cmd = function()
                         local word = vim.fn.expand "<cWORD>"
