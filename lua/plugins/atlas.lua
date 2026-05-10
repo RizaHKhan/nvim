@@ -21,84 +21,105 @@ local function repositories(workspace, directory)
 end
 
 return {
-    "RizaHKhan/atlas.nvim",
+    "emrearmagan/atlas.nvim",
     config = function()
         require("atlas").setup {
-            ---@type BitbucketConfig
-            bitbucket = {
-                user = os.getenv "BITBUCKET_USER" or "",
-                token = os.getenv "BITBUCKET_TOKEN" or "",
-                cache_ttl = 300,
-                repo_config = {
-                    -- Maps `workspace/repo` to local paths. Used for checkout and custom actions.
-                    paths = {
-                        ["camcloud/*"] = "~/camcloud/repos/*",
-                    },
+            pulls = {
+                providers = {
+                    bitbucket = {
+                        user = os.getenv "BITBUCKET_USER" or "",
+                        token = os.getenv "BITBUCKET_TOKEN" or "",
+                        cache_ttl = 300,
+                        repo_config = {
+                            -- Maps `workspace/repo` to local paths. Used for checkout and custom actions.
+                            paths = {
+                                ["camcloud/*"] = "~/camcloud/repos/*",
+                            },
+                            settings = {
+                                ["camcloud/atlas"] = {
+                                    readme = "README.md", -- optional, defaults to README.md
+                                },
+                            },
+                        },
+                        diff = {
+                            open_cmd = "CodeDiff", -- or "DiffviewOpen"
+                        },
+                        custom_actions = {}, -- See Custom Actions below.
+                        views = {
+                            {
+                                name = "Me",
+                                key = "M",
+                                layout = "compact", -- "compact" or "plain"
+                                repos = repositories("camcloud", "~/camcloud/repos"),
 
-                    settings = {
-                        ["camcloud/atlas"] = {
-                            readme = "README.md", -- optional, defaults to README.md
+                                ---@param pr BitbucketPR
+                                ---@param ctx table
+                                filter = function(pr, ctx)
+                                    local user = ctx.user or {}
+                                    return pr.author and pr.author.account_id == user.account_id
+                                end,
+                            },
+                            {
+                                name = "Others",
+                                key = "O",
+                                layout = "plain", -- "compact" or "plain"
+                                repos = repositories("camcloud", "~/camcloud/repos"),
+                            },
                         },
                     },
-                },
-                diff = {
-                    open_cmd = "CodeDiff", -- or "DiffviewOpen"
-                },
-                custom_actions = {}, -- See Custom Actions below.
+                    github = {
+                        cache_ttl = 300,
 
-                ---@type BitbucketViewConfig[]
-                views = {
-                    {
-                        name = "Me",
-                        key = "M",
-                        layout = "compact", -- "compact" or "plain"
-                        repos = repositories("camcloud", "~/camcloud/repos"),
-
-                        ---@param pr BitbucketPR
-                        ---@param ctx table
-                        filter = function(pr, ctx)
-                            local user = ctx.user or {}
-                            return pr.author and pr.author.account_id == user.account_id
-                        end,
-                    },
-                    {
-                        name = "Others",
-                        key = "O",
-                        layout = "plain", -- "compact" or "plain"
-                        repos = repositories("camcloud", "~/camcloud/repos"),
+                        ---@type AtlasGitHubViewConfig[]
+                        views = {
+                            {
+                                name = "My PRs",
+                                key = "1",
+                                search = "author:@me sort:updated-desc",
+                            },
+                            {
+                                name = "Repo",
+                                key = "3",
+                                search = "repo:ryanrapini/LabSpend-Laravel",
+                            },
+                        },
                     },
                 },
             },
-            jira = {
-                base_url = os.getenv "JIRA_BASE_URL" or "",
-                email = os.getenv "JIRA_EMAIL" or "",
-                token = os.getenv "JIRA_TOKEN" or "",
-                cache_ttl = 300,
-                resolve_parent_issues = true,
+            issues = {
+                providers = {
+                    jira = {
+                        base_url = os.getenv "JIRA_BASE_URL" or "",
+                        email = os.getenv "JIRA_EMAIL" or "",
+                        token = os.getenv "JIRA_TOKEN" or "",
+                        cache_ttl = 300,
+                        resolve_parent_issues = true,
 
-                project_config = {
-                    ALE = {
-                        customfield_10003 = {
-                            name = "Approvers",
-                            format = function(value)
-                                if type(value) ~= "table" or #value == 0 then
-                                    return nil -- nil hides the field
-                                end
+                        project_config = {
+                            ALE = {
+                                customfield_10003 = {
+                                    name = "Approvers",
+                                    format = function(value)
+                                        if type(value) ~= "table" or #value == 0 then
+                                            return nil -- nil hides the field
+                                        end
 
-                                return table.concat(value, ", ")
-                            end,
-                            hl_group = "AtlasChipActive",
-                            display = "chip", -- "chip" (default) or "table"
+                                        return table.concat(value, ", ")
+                                    end,
+                                    hl_group = "AtlasChipActive",
+                                    display = "chip", -- "chip" (default) or "table"
+                                },
+                            },
                         },
-                    },
-                },
 
-                ---@type JiraViewConfig[]
-                views = {
-                    {
-                        name = "My Board",
-                        key = "M",
-                        jql = "project = ALE AND assignee = currentUser() AND statusCategory != Done ORDER BY updated DESC",
+                        ---@type JiraViewConfig[]
+                        views = {
+                            {
+                                name = "My Board",
+                                key = "M",
+                                jql = "project = ALE AND assignee = currentUser() AND statusCategory != Done ORDER BY updated DESC",
+                            },
+                        },
                     },
                 },
             },
