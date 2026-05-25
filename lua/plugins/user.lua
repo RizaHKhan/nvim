@@ -2,6 +2,7 @@
 return {
     {
         "akinsho/toggleterm.nvim",
+        enabled = false,
         opts = {
             shade_terminals = false,
             highlights = {
