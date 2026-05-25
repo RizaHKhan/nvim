@@ -206,6 +206,13 @@ return {
         config = function(_, opts) require("fzf-lua").setup(opts) end,
     },
     {
+        "nvzone/floaterm",
+        dependencies = "nvzone/volt",
+        opts = {},
+        cmd = "FloatermToggle",
+        config = function(_, opts) require("floaterm").setup(opts) end,
+    },
+    {
         "esmuellert/codediff.nvim",
         cmd = "CodeDiff",
     },
