@@ -171,29 +171,6 @@ return {
         },
     },
     {
-        "stevearc/oil.nvim",
-        event = "VeryLazy",
-        opts = {
-            default_file_explorer = true,
-            skip_confirm_for_simple_edits = true,
-            view_options = {
-                show_hidden = true,
-                is_always_hidden = function(name, _) return name == "node_modules" or name == ".git" end,
-            },
-            keymaps = {
-                ["<c-c>"] = false,
-                ["<C-l>"] = false,
-                ["<C-h>"] = false,
-                ["g."] = "actions.toggle_hidden",
-                ["_g"] = function()
-                    local git_path = vim.fn.finddir(".git", ".;")
-                    local cd_git = vim.fn.fnamemodify(git_path, ":h")
-                    vim.api.nvim_command(string.format("edit %s", cd_git))
-                end,
-            },
-        },
-    },
-    {
         "mgierada/lazydocker.nvim",
         dependencies = { "akinsho/toggleterm.nvim" },
         config = function()
