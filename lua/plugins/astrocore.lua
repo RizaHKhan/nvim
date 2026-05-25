@@ -29,7 +29,7 @@ return {
         options = {
             opt = { -- vim.opt.<key>
                 relativenumber = false, -- sets vim.opt.relativenumber
-                number = false, -- sets vim.opt.number
+                number = true, -- sets vim.opt.number
                 spell = false, -- sets vim.opt.spell
                 signcolumn = "yes", -- sets vim.opt.signcolumn to yes
                 wrap = false, -- sets vim.opt.wrap
@@ -41,6 +41,7 @@ return {
                 -- configure global vim variables (vim.g)
                 -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
                 -- This can be found in the `lua/lazy_setup.lua` file
+                everforest_background = "hard",
             },
         },
         -- Mappings can be configured through AstroCore as well.
@@ -60,6 +61,7 @@ return {
                 [";h"] = { cmd = ":CodeDiff history %<cr>", desc = "Close Diffview" },
                 ["="] = { cmd = "<cmd>Oil<cr>", desc = "Oil" },
                 ["<leader>y"] = { cmd = ":YankPath<cr>", desc = "Yank path" },
+                ["T"] = { cmd = function() require("floaterm").toggle() end, desc = "Floating Terminal" },
                 [".."] = {
                     cmd = function()
                         local word = vim.fn.expand "<cWORD>"
@@ -81,10 +83,6 @@ return {
                     end,
                     desc = "Wrap word in HTML tag, place cursor inside, and enter insert mode",
                 },
-            },
-            v = {
-                ["+"] = { cmd = function() require("opencode").prompt "@this" end, desc = "Add to Opencode" },
-                ["="] = { cmd = function() require("opencode").select() end, desc = "Opencode Select" },
             },
         },
     },
