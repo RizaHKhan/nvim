@@ -4,9 +4,7 @@ return {
     opts = {
         animate = {},
         gh = {
-            -- your gh configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
+            enabled = false,
         },
         scratch = {
             win = {
@@ -19,7 +17,7 @@ return {
         },
         bigfile = { enabled = true },
         explorer = { enabled = false },
-        indent = { enabled = false },
+        indent = { enabled = true },
         input = { enabled = true },
         notifier = {
             enabled = true,
@@ -119,7 +117,6 @@ return {
             sources = {
                 explorer = {},
             },
-
         },
         quickfile = { enabled = true },
         scope = { enabled = true },
@@ -194,7 +191,12 @@ return {
         { "<leader>lsw", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
         { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
         {
-            "<leader>fw",
+            "K",
+            function() Snacks.picker.git_status {} end,
+            desc = "Git Status Files",
+        },
+        {
+            "fw",
             function() Snacks.picker.grep_word() end,
             desc = "Current word search",
             mode = { "n", "x" },

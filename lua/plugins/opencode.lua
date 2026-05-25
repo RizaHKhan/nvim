@@ -34,10 +34,28 @@ return {
             { desc = "Ask about this" }
         )
         vim.keymap.set(
-            { "n", "x" },
+            { "v" },
             "<leader>os",
+            function() require("opencode").prompt "@this: " end,
+            { desc = "Ask about this" }
+        )
+        vim.keymap.set(
+            { "n", "x" },
+            "<leader>oA",
             function() require("opencode").select() end,
-            { desc = "Select prompt" }
+            { desc = "Add to Opencode" }
+        )
+        vim.keymap.set(
+            { "n", "x" },
+            "<leader>ob",
+            function() require("opencode").ask("@buffer: ", { submit = true }) end,
+            { desc = "Ask about this" }
+        )
+        vim.keymap.set(
+            { "n", "x" },
+            "<leader>oB",
+            function() require("opencode").ask("@buffers: ", { submit = true }) end,
+            { desc = "Ask about this" }
         )
     end,
 }
