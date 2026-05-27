@@ -84,6 +84,10 @@ return {
                     desc = "Wrap word in HTML tag, place cursor inside, and enter insert mode",
                 },
             },
+            v = {
+                ["E"] = { cmd = ":'<,'>CodeCompanion /explain<cr>", desc = "Explain Code" },
+                ["F"] = { cmd = ":'<,'>CodeCompanion /fix<cr>", desc = "Fix Code" },
+            },
         },
     },
 }
