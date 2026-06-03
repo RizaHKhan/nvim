@@ -162,7 +162,7 @@ return {
             desc = "Smart Find Files",
         },
         {
-            "B",
+            "H",
             function()
                 Snacks.picker.buffers {
                     finder = "buffers",
