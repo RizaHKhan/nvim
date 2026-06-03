@@ -88,6 +88,7 @@ return {
                 ["A"] = { cmd = ":'<,'>CodeCompanionActions<cr>", desc = "Actions" },
                 ["E"] = { cmd = ":'<,'>CodeCompanion /explain<cr>", desc = "Explain Code" },
                 ["F"] = { cmd = ":'<,'>CodeCompanion /fix<cr>", desc = "Fix Code" },
+                ["<leader>gl"] = { cmd = ":'<,'>GitLink<cr>", desc = "Gitlink" },
             },
         },
     },
