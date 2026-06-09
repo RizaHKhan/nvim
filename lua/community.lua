@@ -20,7 +20,6 @@ return {
     { import = "astrocommunity.git.nvim-tinygit" },
     { import = "astrocommunity.motion.mini-surround" },
     { import = "astrocommunity.pack.angular" },
-    { import = "astrocommunity.pack.laravel" },
     { import = "astrocommunity.pack.nginx" },
     { import = "astrocommunity.pack.php" },
     { import = "astrocommunity.pack.typescript-all-in-one" },
