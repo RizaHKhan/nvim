@@ -4,7 +4,7 @@ return {
     opts = {
         animate = {},
         gh = {
-            enabled = false,
+            enabled = true,
         },
         scratch = {
             win = {
@@ -14,6 +14,9 @@ return {
         },
         git = {
             enabled = true,
+        },
+        rename = {
+            enabled = true
         },
         bigfile = { enabled = true },
         explorer = { enabled = false },
@@ -239,6 +242,11 @@ return {
             "M",
             function() Snacks.picker.marks() end,
             desc = "Marks",
+        },
+        {
+            "gl",
+            function() Snacks.git.blame_line() end,
+            desc = "Blame line",
         },
         {
             "gD",
