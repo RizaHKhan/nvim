@@ -65,21 +65,6 @@ return {
         end,
     },
     {
-        "kndndrj/nvim-dbee",
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-        },
-        build = function()
-            -- Install tries to automatically detect the install method.
-            -- if it fails, try calling it with one of these parameters:
-            --    "curl", "wget", "bitsadmin", "go"
-            require("dbee").install()
-        end,
-        config = function()
-            require("dbee").setup( --[[optional config]])
-        end,
-    },
-    {
         "okuuva/auto-save.nvim",
         version = "^1.0.0", -- see https://devhints.io/semver, alternatively use '*' to use the latest tagged release
         cmd = "ASToggle", -- optional for lazy loading on command

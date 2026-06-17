@@ -51,7 +51,6 @@ return {
                 -- navigate buffer tabs
                 ["tt"] = { cmd = ":tabnew <cr>", desc = "New tab" },
                 ["tc"] = { cmd = ":tabclose <cr>", desc = "Close tab" },
-                ["D"] = { cmd = ":Dbee<cr>", desc = "Toggle Dbee" },
                 ["<leader>jq"] = { cmd = ":JqPlayground<cr>", desc = "JQ" },
                 ["<leader>G"] = { cmd = ":AtlasPulls github<cr>", desc = "Bitbucket" },
                 ["<leader>B"] = { cmd = ":AtlasPulls bitbucket<cr>", desc = "Bitbucket" },
