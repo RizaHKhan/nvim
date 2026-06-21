@@ -54,7 +54,7 @@ return {
                 ["<leader>jq"] = { cmd = ":JqPlayground<cr>", desc = "JQ" },
                 ["<leader>G"] = { cmd = ":AtlasPulls github<cr>", desc = "Bitbucket" },
                 ["<leader>B"] = { cmd = ":AtlasPulls bitbucket<cr>", desc = "Bitbucket" },
-                ["<leader>J"] = { cmd = ":AtlasIssues<cr>", desc = "Jira" },
+                ["<leader>I"] = { cmd = ":AtlasIssues<cr>", desc = "Jira" },
                 [";d"] = { cmd = ":CodeDiff<cr>", desc = "Open Diffview" },
                 [";h"] = { cmd = ":CodeDiff history %<cr>", desc = "Close Diffview" },
                 ["L"] = { cmd = ":CodeCompanionChat Toggle<cr>", desc = "CodeCompanionChat Toggle" },

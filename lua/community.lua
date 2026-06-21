@@ -6,6 +6,7 @@
 return {
     "AstroNvim/astrocommunity",
     { import = "astrocommunity.completion.blink-cmp" },
+    { import = "astrocommunity.recipes.ai" },
     { import = "astrocommunity.completion.blink-cmp-emoji" },
     { import = "astrocommunity.completion.blink-cmp-git" },
     { import = "astrocommunity.completion.blink-cmp-tmux" },

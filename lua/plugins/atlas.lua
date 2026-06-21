@@ -88,6 +88,36 @@ return {
             },
             issues = {
                 providers = {
+                    github = {
+                        cache_ttl = 300,
+                        ---@type AtlasGitHubIssuesViewConfig[]
+                        views = {
+                            {
+                                name = "Assigned",
+                                key = "1",
+                                layout = "plain",
+                                search = "assignee:@me is:open",
+                            },
+                            {
+                                name = "Labspend",
+                                key = "2",
+                                layout = "plain",
+                                search = "is:open sort:updated-desc repo:ryanrapini/LabSpend-Laravel",
+                            },
+                            {
+                                name = "Created",
+                                key = "3",
+                                layout = "compact",
+                                search = "author:@me is:open",
+                            },
+                            {
+                                name = "Mentions",
+                                key = "4",
+                                layout = "plain",
+                                search = "mentions:@me is:open",
+                            },
+                        },
+                    },
                     jira = {
                         base_url = os.getenv "JIRA_BASE_URL" or "",
                         email = os.getenv "JIRA_EMAIL" or "",
