@@ -93,28 +93,22 @@ return {
                         ---@type AtlasGitHubIssuesViewConfig[]
                         views = {
                             {
-                                name = "Assigned",
-                                key = "1",
-                                layout = "plain",
-                                search = "assignee:@me is:open",
-                            },
-                            {
                                 name = "Labspend",
-                                key = "2",
+                                key = "1",
                                 layout = "plain",
                                 search = "is:open sort:updated-desc repo:ryanrapini/LabSpend-Laravel",
                             },
                             {
-                                name = "Created",
-                                key = "3",
-                                layout = "compact",
-                                search = "author:@me is:open",
+                                name = "High Priority",
+                                key = "2",
+                                layout = "plain",
+                                search = 'is:issue repo:ryanrapini/LabSpend-Laravel state:open label:"High Priority"'
                             },
                             {
-                                name = "Mentions",
-                                key = "4",
+                                name = "Production Bug",
+                                key = "3",
                                 layout = "plain",
-                                search = "mentions:@me is:open",
+                                search = 'is:issue repo:ryanrapini/LabSpend-Laravel state:open label:"Production Bug"'
                             },
                         },
                     },
@@ -147,7 +141,7 @@ return {
                             {
                                 name = "My Board",
                                 key = "M",
-                                jql = "project = ALE AND assignee = currentUser() AND statusCategory != Done ORDER BY updated DESC",
+                                jql = "project = ALE AND assignee = currentUser() ORDER BY updated DESC"
                             },
                         },
                     },
