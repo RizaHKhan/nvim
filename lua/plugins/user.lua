@@ -228,7 +228,20 @@ return {
         ---@type oil.SetupOpts
         opts = {},
         -- Optional dependencies
-        dependencies = { { "nvim-mini/mini.icons", opts = {} } },
+        dependencies = {
+            { "nvim-mini/mini.icons", opts = {} },
+
+            { -- AstroCore is always loaded on startup, so making it a dependency doesn't matter
+                "AstroNvim/astrocore",
+                opts = {
+                    mappings = { -- define a mapping to load the plugin module
+                        n = {
+                            ["="] = { cmd = ":Oil<cr>", desc = "Oil" },
+                        },
+                    },
+                },
+            },
+        },
         -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
         -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
         lazy = false,
