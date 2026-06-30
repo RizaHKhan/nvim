@@ -246,4 +246,10 @@ return {
         -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
         lazy = false,
     },
+    {
+        "christoomey/vim-tmux-navigator",
+        lazy = false,
+        init = function() vim.g.tmux_navigator_no_mappings = 1 end,
+        config = function() dofile(vim.fn.expand "/Users/rkhan/.config/herdr/plugins/github/vim-herdr-navigation-a8bf42123d81/editor/nvim.lua") end,
+    },
 }
