@@ -42,24 +42,27 @@ return {
 
         require("dap-go").setup {
             dap_configurations = {
-                {
-                    type = "go",
-                    name = "Attach remote",
-                    mode = "remote",
-                    request = "attach",
-                },
+
+                type = "go",
+                name = "Debug test", -- what shows in the picker
+                request = "launch",
+                mode = "test",
+                program = "${fileDirname}", -- runs tests in current file's package
+                env = { CGO_ENABLED = "0" },
             },
-            delve = {
-                path = "dlv",
-                initialize_timeout_sec = 20,
-                port = "${port}",
-                args = {},
-                build_flags = {},
-                detached = vim.fn.has "win32" == 0,
-                cwd = nil,
+            {
+                type = "go",
+                name = "Debug binary",
+                request = "launch",
+                mode = "exec",
+                program = "${workspaceFolder}/bkm", -- or "./cmd/bkm"
+                args = { "add", "--url", "https://example.com", "--tags", "go" },
             },
-            tests = {
-                verbose = false,
+            {
+                type = "go",
+                name = "Attach remote",
+                mode = "remote",
+                request = "attach",
             },
         }
 

@@ -6,6 +6,7 @@ return {
         "nvim-neotest/neotest-jest",
         "marilari88/neotest-vitest",
         "V13Axel/neotest-pest",
+        "nvim-neotest/neotest-go",
     },
     opts = function(_, opts)
         -- See all config options with :h neotest.Config
@@ -27,6 +28,7 @@ return {
             animated = false,
         }
         opts.adapters = {
+            require "neotest-go",
             require "neotest-python",
             require "neotest-vitest",
             require "neotest-phpunit" {
