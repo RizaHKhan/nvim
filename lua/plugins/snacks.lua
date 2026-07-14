@@ -7,6 +7,7 @@ return {
             enabled = true,
         },
         scratch = {
+            ft = "markdown",
             win = {
                 backdrop = true,
                 border = "none",
