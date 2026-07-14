@@ -250,6 +250,17 @@ return {
         "christoomey/vim-tmux-navigator",
         lazy = false,
         init = function() vim.g.tmux_navigator_no_mappings = 1 end,
-        config = function() dofile(vim.fn.expand "/Users/rkhan/.config/herdr/plugins/github/vim-herdr-navigation-a8bf42123d81/editor/nvim.lua") end,
+        config = function()
+            dofile(
+                vim.fn.expand "/Users/rkhan/.config/herdr/plugins/github/vim-herdr-navigation-a8bf42123d81/editor/nvim.lua"
+            )
+        end,
+    },
+    {
+        "cajames/copy-reference.nvim",
+        opts = {}, -- optional configuration
+        keys = {
+            { "Y", "<cmd>CopyReference line<cr>", mode = { "v" }, desc = "Copy file:line reference" },
+        },
     },
 }

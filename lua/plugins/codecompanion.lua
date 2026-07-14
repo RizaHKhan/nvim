@@ -28,7 +28,7 @@ return {
                 },
             },
         },
-        strategies = {
+        interactions = {
             chat = {
                 adapter = "opencode",
             },
