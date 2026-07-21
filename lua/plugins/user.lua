@@ -24,7 +24,7 @@ return {
     {
         "L3MON4D3/LuaSnip",
         config = function(plugin, opts)
-            require "astronvim.plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
+            require "astronvim.plugins.configs.luasnip" (plugin, opts) -- include the default astronvim config that calls the setup call
             -- add more custom luasnip configuration such as filetype extend or custom snippets
             local luasnip = require "luasnip"
             luasnip.filetype_extend("javascript", { "javascriptreact" })
@@ -34,7 +34,7 @@ return {
     {
         "windwp/nvim-autopairs",
         config = function(plugin, opts)
-            require "astronvim.plugins.configs.nvim-autopairs"(plugin, opts) -- include the default astronvim config that calls the setup call
+            require "astronvim.plugins.configs.nvim-autopairs" (plugin, opts) -- include the default astronvim config that calls the setup call
             -- add more custom autopairs configuration such as custom rules
             local npairs = require "nvim-autopairs"
             local Rule = require "nvim-autopairs.rule"
@@ -42,21 +42,21 @@ return {
             npairs.add_rules(
                 {
                     Rule("$", "$", { "tex", "latex" })
-                        -- don't add a pair if the next character is %
+                    -- don't add a pair if the next character is %
                         :with_pair(
                             cond.not_after_regex "%%"
                         )
-                        -- don't add a pair if  the previous character is xxx
+                    -- don't add a pair if  the previous character is xxx
                         :with_pair(
                             cond.not_before_regex("xxx", 3)
                         )
-                        -- don't move right when repeat character
+                    -- don't move right when repeat character
                         :with_move(cond.none())
-                        -- don't delete if the next character is xx
+                    -- don't delete if the next character is xx
                         :with_del(
                             cond.not_after_regex "xx"
                         )
-                        -- disable adding a newline when you press <cr>
+                    -- disable adding a newline when you press <cr>
                         :with_cr(cond.none()),
                 },
                 -- disable for .vim files, but it work for another filetypes
@@ -66,8 +66,8 @@ return {
     },
     {
         "okuuva/auto-save.nvim",
-        version = "^1.0.0", -- see https://devhints.io/semver, alternatively use '*' to use the latest tagged release
-        cmd = "ASToggle", -- optional for lazy loading on command
+        version = "^1.0.0",                       -- see https://devhints.io/semver, alternatively use '*' to use the latest tagged release
+        cmd = "ASToggle",                         -- optional for lazy loading on command
         event = { "InsertLeave", "TextChanged" }, -- optional for lazy loading on trigger events
         opts = {
             -- your config goes here
@@ -242,6 +242,11 @@ return {
                 },
             },
         },
+        config = function()
+            require('oil').setup({
+                default_file_explorer = false
+            })
+        end,
         -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
         -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
         lazy = false,
